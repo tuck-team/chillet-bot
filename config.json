@@ -1,7 +1,8 @@
 {
   "token": "MTM1MTk1ODY4NTk3MDIwNjcyMA.GNckVb.ZUifflZzdz--IXNmGtk8NVtdn4kCpe4x1DAUZc",
+  "clientId": "1351958685970206720",
   "prefix": "!",
-  "targetChannelId": "1351958685970206720",
+  "targetChannelId": "1351908961657425974",
   "commands": {
     "rolls": [
       "$wa",
@@ -30,5 +31,7 @@
     "autoDaily": true,
     "autoKakera": true
   },
-  "claimCharacters": []
+  "claimCharacters": [
+    "les chinois"
+  ]
 }

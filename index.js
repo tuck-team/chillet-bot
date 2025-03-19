@@ -6,6 +6,7 @@ const path = require('path');
 const CONFIG_FILE = 'config.json';
 let config = {
   token: '',
+  clientId: '', // Added clientId field
   prefix: '!',
   targetChannelId: '',
   commands: {
@@ -147,7 +148,93 @@ function shouldClaimCharacter(embed) {
     embed.title.toLowerCase().includes(char.toLowerCase()));
 }
 
-// Listen for messages
+// Command handling function - works for both text and slash commands
+const handleCommand = async (command, args, replyFunc) => {
+  // Command: help
+  if (command === 'help') {
+    replyFunc(
+      `Commands:\n` +
+      `${config.prefix}status - Show current status\n` +
+      `${config.prefix}roll - Trigger roll commands now\n` +
+      `${config.prefix}daily - Trigger daily commands now\n` +
+      `${config.prefix}toggle [autoRoll|autoClaim|autoDaily|autoKakera] - Toggle a setting\n` +
+      `${config.prefix}add [character] - Add character to auto-claim list\n` +
+      `${config.prefix}remove [character] - Remove character from auto-claim list\n` +
+      `${config.prefix}setchannel - Set current channel as target for commands`
+    );
+  }
+  
+  // Command: status
+  else if (command === 'status') {
+    replyFunc(
+      `Status:\n` +
+      `Auto Roll: ${config.settings.autoRoll ? 'On' : 'Off'}\n` +
+      `Auto Claim: ${config.settings.autoClaim ? 'On' : 'Off'}\n` +
+      `Auto Daily: ${config.settings.autoDaily ? 'On' : 'Off'}\n` +
+      `Auto Kakera: ${config.settings.autoKakera ? 'On' : 'Off'}\n` +
+      `Characters to claim: ${config.claimCharacters.length > 0 ? config.claimCharacters.join(', ') : 'All'}\n` +
+      `Target channel: ${config.targetChannelId || 'Not set'}`
+    );
+  }
+  
+  // Command: roll
+  else if (command === 'roll') {
+    replyFunc('$ma');
+    sendRollCommands();
+  }
+  
+  // Command: daily
+  else if (command === 'daily') {
+    replyFunc('Triggering daily commands now');
+    sendDailyCommands();
+  }
+  
+  // Command: toggle
+  else if (command === 'toggle' && args[0]) {
+    const setting = args[0].toLowerCase();
+    if (config.settings[setting] !== undefined) {
+      config.settings[setting] = !config.settings[setting];
+      replyFunc(`${setting} is now ${config.settings[setting] ? 'On' : 'Off'}`);
+      saveConfig();
+    } else {
+      replyFunc(`Unknown setting: ${setting}`);
+    }
+  }
+  
+  // Command: add character
+  else if (command === 'add' && args.length > 0) {
+    const character = args.join(' ').trim();
+    if (!config.claimCharacters.includes(character)) {
+      config.claimCharacters.push(character);
+      replyFunc(`Added "${character}" to auto-claim list`);
+      saveConfig();
+    } else {
+      replyFunc(`"${character}" is already in the auto-claim list`);
+    }
+  }
+  
+  // Command: remove character
+  else if (command === 'remove' && args.length > 0) {
+    const character = args.join(' ').trim();
+    const index = config.claimCharacters.indexOf(character);
+    if (index !== -1) {
+      config.claimCharacters.splice(index, 1);
+      replyFunc(`Removed "${character}" from auto-claim list`);
+      saveConfig();
+    } else {
+      replyFunc(`"${character}" is not in the auto-claim list`);
+    }
+  }
+  
+  // Command: setchannel
+  else if (command === 'setchannel') {
+    config.targetChannelId = args.channelId || args.channel?.id;
+    replyFunc(`Set this channel as the target for commands`);
+    saveConfig();
+  }
+};
+
+// Listen for regular text commands
 client.on(Events.MessageCreate, async message => {
   // Ignore own messages
   if (message.author.id === client.user.id) return;
@@ -157,88 +244,7 @@ client.on(Events.MessageCreate, async message => {
     const args = message.content.slice(config.prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
     
-    // Command: help
-    if (command === 'help') {
-      message.channel.send(
-        `Commands:\n` +
-        `${config.prefix}status - Show current status\n` +
-        `${config.prefix}roll - Trigger roll commands now\n` +
-        `${config.prefix}daily - Trigger daily commands now\n` +
-        `${config.prefix}toggle [autoRoll|autoClaim|autoDaily|autoKakera] - Toggle a setting\n` +
-        `${config.prefix}add [character] - Add character to auto-claim list\n` +
-        `${config.prefix}remove [character] - Remove character from auto-claim list\n` +
-        `${config.prefix}setchannel - Set current channel as target for commands`
-      );
-    }
-    
-    // Command: status
-    else if (command === 'status') {
-      message.channel.send(
-        `Status:\n` +
-        `Auto Roll: ${config.settings.autoRoll ? 'On' : 'Off'}\n` +
-        `Auto Claim: ${config.settings.autoClaim ? 'On' : 'Off'}\n` +
-        `Auto Daily: ${config.settings.autoDaily ? 'On' : 'Off'}\n` +
-        `Auto Kakera: ${config.settings.autoKakera ? 'On' : 'Off'}\n` +
-        `Characters to claim: ${config.claimCharacters.length > 0 ? config.claimCharacters.join(', ') : 'All'}\n` +
-        `Target channel: ${config.targetChannelId || 'Not set'}`
-      );
-    }
-    
-    // Command: roll
-    else if (command === 'roll') {
-      message.channel.send('Triggering roll commands now');
-      sendRollCommands();
-    }
-    
-    // Command: daily
-    else if (command === 'daily') {
-      message.channel.send('Triggering daily commands now');
-      sendDailyCommands();
-    }
-    
-    // Command: toggle
-    else if (command === 'toggle' && args[0]) {
-      const setting = args[0].toLowerCase();
-      if (config.settings[setting] !== undefined) {
-        config.settings[setting] = !config.settings[setting];
-        message.channel.send(`${setting} is now ${config.settings[setting] ? 'On' : 'Off'}`);
-        saveConfig();
-      } else {
-        message.channel.send(`Unknown setting: ${setting}`);
-      }
-    }
-    
-    // Command: add character
-    else if (command === 'add' && args.length > 0) {
-      const character = args.join(' ').trim();
-      if (!config.claimCharacters.includes(character)) {
-        config.claimCharacters.push(character);
-        message.channel.send(`Added "${character}" to auto-claim list`);
-        saveConfig();
-      } else {
-        message.channel.send(`"${character}" is already in the auto-claim list`);
-      }
-    }
-    
-    // Command: remove character
-    else if (command === 'remove' && args.length > 0) {
-      const character = args.join(' ').trim();
-      const index = config.claimCharacters.indexOf(character);
-      if (index !== -1) {
-        config.claimCharacters.splice(index, 1);
-        message.channel.send(`Removed "${character}" from auto-claim list`);
-        saveConfig();
-      } else {
-        message.channel.send(`"${character}" is not in the auto-claim list`);
-      }
-    }
-    
-    // Command: setchannel
-    else if (command === 'setchannel') {
-      config.targetChannelId = message.channel.id;
-      message.channel.send(`Set this channel as the target for commands`);
-      saveConfig();
-    }
+    await handleCommand(command, args, (text) => message.channel.send(text));
   }
   
   // Mudae responses handling
@@ -273,6 +279,27 @@ client.on(Events.MessageCreate, async message => {
   }
 });
 
+// Listen for slash commands
+client.on(Events.InteractionCreate, async interaction => {
+  if (!interaction.isCommand()) return;
+
+  const { commandName, options } = interaction;
+  
+  // Extract options based on command
+  let args = [];
+  
+  if (commandName === 'toggle') {
+    args = [options.getString('setting')];
+  } else if (commandName === 'add' || commandName === 'remove') {
+    args = [options.getString('character')];
+  } else if (commandName === 'setchannel') {
+    args = { channelId: interaction.channelId };
+  }
+  
+  // Handle the command
+  await handleCommand(commandName, args, (text) => interaction.reply(text));
+});
+
 // Save configuration
 function saveConfig() {
   try {
@@ -297,5 +324,5 @@ if (config.token) {
 console.log('To use this bot, you need to:');
 console.log('1. Create a bot on Discord Developer Portal');
 console.log('2. Get your bot token');
-console.log('3. Replace YOUR_BOT_TOKEN in the code with your actual token');
-console.log('4. Uncomment the client.login line'); 
+console.log('3. Add your token to config.json');
+console.log('4. Enable Message Content Intent in the Discord Developer Portal'); 

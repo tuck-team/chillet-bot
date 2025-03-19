@@ -9,6 +9,7 @@ A Discord bot for automating interactions with the Mudae bot.
 - Auto-collecting kakera
 - Daily command automation ($daily, $dk, etc.)
 - Easy configuration via Discord commands
+- Supports both text commands and slash commands
 
 ## Setup
 
@@ -16,8 +17,9 @@ A Discord bot for automating interactions with the Mudae bot.
    - Go to [Discord Developer Portal](https://discord.com/developers/applications)
    - Click "New Application" and give it a name
    - Go to the "Bot" tab and click "Add Bot"
-   - Under "Privileged Gateway Intents", enable all intents
+   - Under "Privileged Gateway Intents", enable ALL intents (particularly Message Content Intent)
    - Copy your bot token (keep this secret!)
+   - Copy your Application ID (under the "General Information" tab)
 
 2. **Invite your bot to your server**
    - Go to OAuth2 > URL Generator
@@ -26,15 +28,19 @@ A Discord bot for automating interactions with the Mudae bot.
    - Copy the generated URL and open it in your browser to invite the bot
 
 3. **Configure the bot**
-   - Run the bot once to generate the config.json file
-   - Edit the config.json file and add your bot token
-   - Start the bot again
+   - Edit the config.json file and add your bot token and Application ID (as clientId)
+   - Start the bot with `npm start`
    - In Discord, use the `!setchannel` command in the channel where you want the bot to operate
+
+4. **Register Slash Commands (Optional)**
+   - Run `npm run register` to register slash commands
+   - This will make slash commands available in your server
 
 ## Usage
 
-The bot uses the prefix `!` for commands:
+The bot supports both prefix commands and slash commands:
 
+### Text Commands (prefix: !)
 - `!help` - Show available commands
 - `!status` - Show current bot status and settings
 - `!roll` - Manually trigger roll commands
@@ -47,6 +53,9 @@ The bot uses the prefix `!` for commands:
 - `!remove [character]` - Remove a character from your auto-claim list
 - `!setchannel` - Set the current channel as the target for commands
 
+### Slash Commands
+The same commands are available as slash commands with the `/` prefix.
+
 ## Running the Bot
 
 1. Install dependencies:
@@ -57,6 +66,11 @@ The bot uses the prefix `!` for commands:
 2. Start the bot:
    ```
    npm start
+   ```
+
+3. (Optional) Register slash commands:
+   ```
+   npm run register
    ```
 
 ## Disclaimer
