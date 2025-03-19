@@ -1,4 +1,4 @@
-# Auto-Mudae
+# Chillet
 
 A Discord bot for automating interactions with the Mudae bot.
 
