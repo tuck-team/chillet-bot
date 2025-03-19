@@ -1,0 +1,34 @@
+{
+  "token": "MTM1MTk1ODY4NTk3MDIwNjcyMA.GNckVb.ZUifflZzdz--IXNmGtk8NVtdn4kCpe4x1DAUZc",
+  "prefix": "!",
+  "targetChannelId": "1351958685970206720",
+  "commands": {
+    "rolls": [
+      "$wa",
+      "$ha",
+      "$ma",
+      "$ta"
+    ],
+    "dailies": [
+      "$daily",
+      "$dk",
+      "$vote",
+      "$ku"
+    ],
+    "pokemon": [
+      "$p",
+      "$pd"
+    ]
+  },
+  "timers": {
+    "rollInterval": 3600000,
+    "dailyCheckInterval": 43200000
+  },
+  "settings": {
+    "autoRoll": true,
+    "autoClaim": true,
+    "autoDaily": true,
+    "autoKakera": true
+  },
+  "claimCharacters": []
+}

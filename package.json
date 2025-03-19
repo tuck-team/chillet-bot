@@ -1,0 +1,20 @@
+{
+  "name": "auto-mudae",
+  "version": "1.0.0",
+  "description": "Automation for Mudae Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mudae",
+    "discord",
+    "automation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.14.1"
+  }
+} 
