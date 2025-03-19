@@ -42,16 +42,6 @@ The bot supports both prefix commands and slash commands:
 
 ### Text Commands (prefix: !)
 - `!help` - Show available commands
-- `!status` - Show current bot status and settings
-- `!roll` - Manually trigger roll commands
-- `!daily` - Manually trigger daily commands
-- `!toggle autoRoll` - Toggle automatic rolling on/off
-- `!toggle autoClaim` - Toggle automatic claiming on/off
-- `!toggle autoDaily` - Toggle automatic daily commands on/off
-- `!toggle autoKakera` - Toggle automatic kakera collection on/off
-- `!add [character]` - Add a character to your auto-claim list
-- `!remove [character]` - Remove a character from your auto-claim list
-- `!setchannel` - Set the current channel as the target for commands
 
 ### Slash Commands
 The same commands are available as slash commands with the `/` prefix.

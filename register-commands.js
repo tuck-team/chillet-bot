@@ -28,64 +28,6 @@ const commands = [
   {
     name: 'help',
     description: 'Show available commands'
-  },
-  {
-    name: 'status',
-    description: 'Show current bot status and settings'
-  },
-  {
-    name: 'roll',
-    description: 'Manually trigger roll commands'
-  },
-  {
-    name: 'daily',
-    description: 'Manually trigger daily commands'
-  },
-  {
-    name: 'toggle',
-    description: 'Toggle a setting on/off',
-    options: [
-      {
-        name: 'setting',
-        description: 'The setting to toggle',
-        type: 3, // STRING type
-        required: true,
-        choices: [
-          { name: 'Auto Roll', value: 'autoRoll' },
-          { name: 'Auto Claim', value: 'autoClaim' },
-          { name: 'Auto Daily', value: 'autoDaily' },
-          { name: 'Auto Kakera', value: 'autoKakera' }
-        ]
-      }
-    ]
-  },
-  {
-    name: 'add',
-    description: 'Add a character to your auto-claim list',
-    options: [
-      {
-        name: 'character',
-        description: 'The character name to add',
-        type: 3, // STRING type
-        required: true
-      }
-    ]
-  },
-  {
-    name: 'remove',
-    description: 'Remove a character from your auto-claim list',
-    options: [
-      {
-        name: 'character',
-        description: 'The character name to remove',
-        type: 3, // STRING type
-        required: true
-      }
-    ]
-  },
-  {
-    name: 'setchannel',
-    description: 'Set the current channel as the target for commands'
   }
 ];
 
