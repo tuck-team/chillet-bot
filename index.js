@@ -5,6 +5,7 @@ const { channeladd, channelremove, ischannel } = require('./src/channel');
 const { saveConfig, fs, CONFIG_FILE, getConfig } = require('./src/config');
 const { cooldowns, cooldown, setCooldown } = require('./src/cooldown');
 const { debug } = require('./src/debug');
+const { expedition } = require('./src/expedition');
 const { gold, paycheck } = require('./src/gold');
 const { pal } = require('./src/pal');
 const { palbox } = require('./src/palbox');
@@ -179,6 +180,9 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData, 
   }
   else if (command === 'prefix') {
     prefix({ args, replyFunc });
+  }
+  else if (command === 'expedition') {
+    expedition(messageAuthor, args, replyFunc);
   }
   else if (command === 'gold') {
     gold(messageAuthor, userData, replyFunc);
