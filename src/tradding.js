@@ -40,7 +40,7 @@ function tradp({ args, replyFunc }, userData, messageAuthor, message) {
 
 function tradg({ args, replyFunc }, userData, messageAuthor, message) {
     const userPalData = userData[messageAuthor.id];
-    const nbgold = args[0];
+    const nbgold = parseInt(args[0], 10);
     const tradpartner = userData[getuserid(message)];
 
     if (!tradpartner) {
