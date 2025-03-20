@@ -62,19 +62,6 @@ function saveUserData() {
 
 // Function to add a caught Pal to user data
 function addCaughtPal(userId, username, palName, rarity, isLucky) {
-  if (!userData[userId]) {
-    userData[userId] = {
-      username: username,
-      gold: 0,
-      tier: 0,
-      multiplier: 1,
-      lastPaycheck: null,
-      expeditionslots: 1,
-      caughtPals: [],
-      expeditions: []
-    };
-  }
-
   // Check if this is the first time catching this Pal
   const existingPalIndex = userData[userId].caughtPals.findIndex(pal => pal.name === palName);
   const isFirstCatch = existingPalIndex === -1;
@@ -184,9 +171,6 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData, 
   else if (command === 'prefix') {
     prefix({ args, replyFunc });
   }
-  else if (command === 'expedition') {
-    expedition(messageAuthor, args, replyFunc);
-  }
   else if (command === 'gold') {
     gold(messageAuthor, userData, replyFunc);
   }
@@ -268,7 +252,9 @@ client.on(Events.MessageCreate, async message => {
       tier: 0,
       multiplier: 1,
       lastPaycheck: null,
-      caughtPals: []
+      expeditionslots: 1,
+      caughtPals: [],
+      expeditions: []
     };
   }
   if (now - lastTrigger >= cooldownTime) {

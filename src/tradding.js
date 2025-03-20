@@ -11,9 +11,10 @@ function getuserid(message) {
 
 function tradp({ args, replyFunc }, userData, messageAuthor, message) {
     const userPalData = userData[messageAuthor.id];
-    const palName = args[1][0] !== '@' ? args[0] + ' ' + args[1] : args[0];
+    const palName = args[1].startsWith('<') ? args[0] : args[0] + ' ' + args[1];
     const tradpartner = userData[getuserid(message)];
 
+    console.log(palName);
     if (!tradpartner) {
         replyFunc('User not found!');
         return;
