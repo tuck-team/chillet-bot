@@ -28,6 +28,66 @@ const commands = [
   {
     name: 'help',
     description: 'Show available commands'
+  },
+  {
+    name: 'gold',
+    description: 'Show user gold balance'
+  },
+  {
+    name: 'paycheck',
+    description: 'Use a paycheck if avaible'
+  },
+  {
+    name: 'setprefix', // changed from "setPrefix"
+    description: 'Set the prefix for the bot',
+    options: [
+      {
+        name: 'name',
+        type: 3, // string type
+        description: 'The name of the pal',
+        required: true
+      }
+    ]
+  },
+  {
+    name: 'setcooldown', // changed from "setCooldown"
+    description: 'Change the cooldown for the bot',
+    options: [
+      {
+        name: 'time',
+        type: 4, // integrer type
+        description: 'Cooldown time in minutes',
+        required: true
+      }
+    ]
+  },
+  {
+    name: 'cooldown',
+    description: 'Know the current cooldown'
+  },
+  {
+    name: 'pal',
+    description: 'Get the information of a pal',
+    options: [
+      {
+        name: 'name',
+        type: 3, // string type
+        description: 'The name of the pal',
+        required: true
+      }
+    ]
+  },
+  {
+    name: 'topserv',
+    description: 'Display the top 5 servers'
+  },
+  {
+    name: 'paldex',
+    description: 'Display the completion of the paldex'
+  },
+  {
+    name: 'palbox',
+    description: 'Open the palbox'
   }
 ];
 
@@ -52,4 +112,4 @@ async function registerCommands() {
 }
 
 // Run the registration
-registerCommands(); 
+registerCommands();

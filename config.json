@@ -1,0 +1,21 @@
+{
+  "clientId": "1351958685970206720",
+  "prefix": "!",
+  "targetChannelId": "1351908961657425974",
+  "commands": {
+    "help": [
+      "$help"
+    ],
+    "config": [
+      "$setPrefix",
+      "$setCooldown"
+    ],
+    "info": [
+      "$cooldown",
+      "$pal",
+      "$topserv",
+      "$palbox"
+    ]
+  },
+  "cooldownMinutes": 5
+}
