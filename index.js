@@ -160,21 +160,24 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData, 
   if (command === 'help') {
     replyFunc(
       `**<:T_itemicon_PalSphere:1352291984953577542> Commands: <:T_itemicon_PalSphere:1352291984953577542>**\n` +
-      `${config.prefix}help - Show this help message\n` +
-      `${config.prefix}cooldown - Check your cooldown status\n` +
-      `${config.prefix}setcooldown [minutes] - Set the cooldown time (default: 5)\n` +
-      `${config.prefix}pal [name] - Check a Pal's rarity\n` +
-      `${config.prefix}palbox - View your caught Pals\n` +
-      `${config.prefix}paldex - View Paldex completion status\n` +
-      `${config.prefix}topserv - View server leaderboard by Paldex completion\n` +
-      `${config.prefix}prefix [newPrefix] - Change the command prefix\n` +
-      `${config.prefix}tradp (optional [-l] for lucky) [Palname] @who - Trade a Pal to a user\n` +
-      `${config.prefix}tradg [amount] @who - Trade gold to a user\n` +
-      `${config.prefix}expedition - Start an expedition\n` +
-      `${config.prefix}tier - Check your tier\n` +
-      `${config.prefix}tupgrade - Upgrade your tier\n` +
-      `${config.prefix}debug [channelid] - Debug command\n` +
-      `${config.prefix}debug testembed - Test embed command`
+      `**${config.prefix}help** - Show this help message\n` +
+      `**${config.prefix}cooldown** - Check your cooldown status\n` +
+      `**${config.prefix}setcooldown [minutes]** - Set the cooldown time (default: 5)\n` +
+      `**${config.prefix}pal [name]** - Check a Pal's rarity\n` +
+      `**${config.prefix}palbox** - View your caught Pals\n` +
+      `**${config.prefix}paldex** - View Paldex completion status\n` +
+      `**${config.prefix}topserv** - View server leaderboard by Paldex completion\n` +
+      `**${config.prefix}prefix [newPrefix]** - Change the command prefix\n` +
+      `**${config.prefix}tradp (optional [-l] for lucky) [Palname] @who** - Trade a Pal to a user\n` +
+      `**${config.prefix}tradg [amount] @who** - Trade gold to a user\n` +
+      `**${config.prefix}expedition** - Start an expedition\n` +
+      `**${config.prefix}tier** - Check your tier\n` +
+      `**${config.prefix}tupgrade** - Upgrade your tier\n` +
+      `**${config.prefix}debug [channelid]** - Debug command\n` +
+      `**${config.prefix}debug testembed** - Test embed command\n` +
+      `**${config.prefix}gold** - Check your gold\n` +
+      `**${config.prefix}paycheck** - Check your paycheck\n` +
+      `**ramdom message** - ramdom pal catch`
     );
   }
   else if (command === '!debug') {
