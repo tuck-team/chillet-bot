@@ -1,7 +1,18 @@
 const { EmbedBuilder } = require('discord.js');
 
-function pal({ args, pals, replyFunc }) {
+function pal({ args, pals, replyFunc }, userData, messageAuthor) {
 	const palName = args.join(' ');
+	const userPalData = userData[messageAuthor.id];
+
+	if (!userPalData) {
+		userPalData = {
+		  username: messageAuthor.username,
+		  gold: 0,
+		  tier: 0,
+		  lastPaycheck: null,
+		  caughtPals: []
+		};
+	}
 	if (!palName) {
 	  replyFunc('Please provide a Pal name!');
 	  return;
@@ -29,11 +40,14 @@ function pal({ args, pals, replyFunc }) {
 		break;
 	}
 
+	console.log(userPalData.caughtPals.filter(p => p.name === pal.name && !p.isLucky).length, userPalData.caughtPals.filter(p => p.name === pal.name && p.isLucky).length);
 	const embed = new EmbedBuilder()
 	  .setColor(color)
 	  .setTitle(`${pal.name}`)
-	  .setDescription(`Rarity: ${pal.rarity}\n *N°${pal.nb_pal}*` )
-
+	  .setDescription(`Rarity: ${pal.rarity}\n *N°${pal.nb_pal}*` +
+		`\nNormal catch: **${userPalData.caughtPals.filter(p => p.name === pal.name && !p.isLucky).length}**` +
+		`\nLucky catch: **${userPalData.caughtPals.filter(p => p.name === pal.name && p.isLucky).length}**`
+	  )
 	if (pal.imageUrl) {
 	  embed.setImage(pal.imageUrl);
 	}

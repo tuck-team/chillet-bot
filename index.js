@@ -81,7 +81,6 @@ function addCaughtPal(userId, username, palName, rarity, isLucky) {
       isFirstLucky = true;
     }
   }
-  console.log(isFirstCatch, isFirstLucky, isLucky);
 
   if (isFirstCatch || isFirstLucky){
     userData[userId].caughtPals.push({
@@ -193,7 +192,7 @@ const handleCommand = async (command, args, replyFunc, messageAuthor) => {
     palbox(messageAuthor, userData, replyFunc);
   }
   else if (command === 'pal') {
-    pal({ args, pals, replyFunc });
+    pal({ args, pals, replyFunc }, userData, messageAuthor);
   }
   else if (command === 'paldex') {
     paldex({ messageAuthor, userData, pals, replyFunc });
