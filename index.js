@@ -8,8 +8,8 @@ const { pal } = require('./src/pal');
 const { palbox } = require('./src/palbox');
 const { paldex, createProgressBar } = require('./src/paldex');
 const { prefix } = require('./src/prefix');
+const { tier, tupgrade } = require('./src/tier');
 const { topserv } = require('./src/topserv');
-
 // Configuration
 const USER_DATA_FILE = 'user_data.json';
 const PAL_LIST_FILE = 'pal_list.json';
@@ -201,6 +201,12 @@ const handleCommand = async (command, args, replyFunc, messageAuthor) => {
   else if (command === 'topserv') {
     topserv({ userData, pals, replyFunc });
   }
+  else if (command === 'tier') {
+    tier(messageAuthor, userData, replyFunc);
+  }
+  else if (command === 'tupgrade') {
+    tupgrade(messageAuthor, userData, replyFunc);
+  }
   config = getConfig();
   saveUserData();
 };
@@ -235,7 +241,7 @@ client.on(Events.MessageCreate, async message => {
     const random = Math.random() * 100;
     let color, rarity;
 
-    if (random < 5) {
+    if (random < 3) {
       color = '#FFD700'; // Gold for Legendary
       rarity = 'Legendary';
     } else if (random < 11) {
