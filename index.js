@@ -1,5 +1,6 @@
 const { Client, GatewayIntentBits, Events, EmbedBuilder } = require('discord.js');
 const path = require('path');
+const { channeladd, channelremove, ischannel } = require('./src/channel');
 
 const { saveConfig, fs, CONFIG_FILE, getConfig } = require('./src/config');
 const { cooldowns, cooldown, setCooldown } = require('./src/cooldown');
@@ -158,7 +159,7 @@ client.once(Events.ClientReady, () => {
 });
 
 // Command handling function
-const handleCommand = async (command, args, replyFunc, messageAuthor, userData) => {
+const handleCommand = async (command, args, replyFunc, messageAuthor, userData, message) => {
   if (command === 'help') {
     replyFunc(
       `**<:T_itemicon_PalSphere:1352291984953577542> Commands: <:T_itemicon_PalSphere:1352291984953577542>**\n` +
@@ -260,6 +261,15 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData) 
 client.on(Events.MessageCreate, async message => {
   // Ignore messages from bots
   if (message.author.bot) return;
+  if (message.content.slice(config.prefix.length).trim().split(/ +/).shift().toLowerCase() === 'channeladd') {
+    channeladd(message);
+    return;
+  }
+  if (message.content.slice(config.prefix.length).trim().split(/ +/).shift().toLowerCase() === 'channelremove') {
+    channelremove(message);
+    return;
+  }
+  if (ischannel(message)) return;
 
   // Get current configuration
   config = getConfig();
@@ -269,7 +279,7 @@ client.on(Events.MessageCreate, async message => {
     const args = message.content.slice(config.prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
 
-    await handleCommand(command, args, (text) => message.channel.send(text), message.author, userData);
+    await handleCommand(command, args, (text) => message.channel.send(text), message.author, userData, message);
     return; // Exit after handling command
   }
 
@@ -369,7 +379,7 @@ client.on(Events.InteractionCreate, async interaction => {
   const { commandName } = interaction;
 
   // Handle the command
-  await handleCommand(commandName, [], (text) => interaction.reply(text), interaction.user, userData);
+  await handleCommand(commandName, [], (text) => interaction.reply(text), interaction.user, userData, interaction);
 });
 
 // Login to Discord with token from config

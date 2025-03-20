@@ -1,7 +1,11 @@
 {
+  "token": "",
   "clientId": "1351958685970206720",
   "prefix": "!",
   "targetChannelId": "1351908961657425974",
+  "channelId": [
+    "1352027167231312013"
+  ],
   "commands": {
     "help": [
       "$help"
