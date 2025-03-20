@@ -38,6 +38,14 @@ const commands = [
     description: 'Use a paycheck if avaible'
   },
   {
+    name: 'tier',
+    description: 'Show user tier'
+  },
+  {
+    name: 'tupgrade',
+    description: 'Use gold to upgrade your tier'
+  },
+  {
     name: 'setprefix', // changed from "setPrefix"
     description: 'Set the prefix for the bot',
     options: [
