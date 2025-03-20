@@ -63,6 +63,7 @@ function addCaughtPal(userId, username, palName, rarity, isLucky) {
       username: username,
       gold: 0,
       tier: 0,
+      multiplier: 1,
       lastPaycheck: null,
       caughtPals: []
     };
@@ -158,15 +159,6 @@ client.once(Events.ClientReady, () => {
 
 // Command handling function
 const handleCommand = async (command, args, replyFunc, messageAuthor, userData) => {
-  if (!userData[messageAuthor.id]) {
-    userData[messageAuthor.id] = {
-      username: messageAuthor.username,
-      gold: 0,
-      tier: 0,
-      lastPaycheck: null,
-      caughtPals: []
-    };
-  }
   if (command === 'help') {
     replyFunc(
       `**<:T_itemicon_PalSphere:1352291984953577542> Commands: <:T_itemicon_PalSphere:1352291984953577542>**\n` +
@@ -286,6 +278,16 @@ client.on(Events.MessageCreate, async message => {
   const lastTrigger = cooldowns.get(message.author.id) || 0;
   const cooldownTime = (config.cooldownMinutes || 5) * 60 * 1000; // Convert minutes to milliseconds
 
+  if (!userData[message.author.id]) {
+    userData[message.author.id] = {
+      username: message.author.username,
+      gold: 0,
+      tier: 0,
+      multiplier: 1,
+      lastPaycheck: null,
+      caughtPals: []
+    };
+  }
   if (now - lastTrigger >= cooldownTime) {
     // Update cooldown
     cooldowns.set(message.author.id, now);
@@ -294,13 +296,13 @@ client.on(Events.MessageCreate, async message => {
     const random = Math.random() * 100;
     let color, rarity;
 
-    if (random < 3) {
+    if (random < (3 * userData[message.author.id].multiplier)) {
       color = '#FFD700'; // Gold for Legendary
       rarity = 'Legendary';
-    } else if (random < 11) {
+    } else if (random < (11 * userData[message.author.id].multiplier)) {
       color = '#9B30FF'; // Purple for Epic
       rarity = 'Epic';
-    } else if (random < 40) {
+    } else if (random < (40 * userData[message.author.id].multiplier)) {
       color = '#0099ff'; // Blue for Rare
       rarity = 'Rare';
     } else {
@@ -312,7 +314,7 @@ client.on(Events.MessageCreate, async message => {
     const randomPal = getRandomPalByRarity(rarity);
 
     // Check if Pal is Lucky (5% chance)
-    const isLucky = Math.random() < 0.05;
+    const isLucky = Math.random() < (0.05 * userData[message.author.id].multiplier);
 
     // Add caught Pal to user data and check if it's their first time catching this Pal
     const isFirstCatch = addCaughtPal(message.author.id, message.author.username, randomPal, rarity, isLucky);

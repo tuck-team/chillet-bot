@@ -4,15 +4,6 @@ function pal({ args, pals, replyFunc }, userData, messageAuthor) {
 	const palName = args.join(' ');
 	const userPalData = userData[messageAuthor.id];
 
-	if (!userPalData) {
-		userPalData = {
-		  username: messageAuthor.username,
-		  gold: 0,
-		  tier: 0,
-		  lastPaycheck: null,
-		  caughtPals: []
-		};
-	}
 	if (!palName) {
 	  replyFunc('Please provide a Pal name!');
 	  return;
