@@ -91,6 +91,7 @@ function paldex({ messageAuthor, userData, pals, replyFunc }) {
 
 // Add a global helper for creating progress bars
 function createProgressBar(current, total, length = 24) {
+	console.log(current, total);
 	if (total <= 0) {
 	    return '░'.repeat(length);
 	}
