@@ -319,7 +319,7 @@ client.on(Events.MessageCreate, async message => {
 
     // Create description based on conditions
     let description = isLucky
-      ? `It's a **LUCKY** ${randomPal}, he's so big!`
+      ? `:star2: It's a **LUCKY** ${randomPal}, he's so big! :star2:`
       : `It's a **${randomPal}**!`;
 
     // Add first catch message if applicable
@@ -346,9 +346,9 @@ client.on(Events.MessageCreate, async message => {
     // Create embed message
     const embed = new EmbedBuilder()
       .setColor(color)
-      .setAuthor({ name: isLucky ? `caught a :star2: Lucky ${rarity} Pal! :star2:` : `caught a ${rarity} Pal!`, iconURL: message.author.avatarURL() })
+      .setAuthor({ name: isLucky ? `caught a Lucky ${rarity} Pal!` : `caught a ${rarity} Pal!`, iconURL: message.author.avatarURL() })
       .setDescription(description)
-      .setFooter({ text: `${randomPal} caught so far: ${  userData[message.author.id].caughtPals.find(pal => pal.name === randomPal && pal.isLucky === isLucky).nbCaught}` });
+      .setFooter({ text: `${randomPal} caught so far: ${userData[message.author.id].caughtPals.find(pal => pal.name === randomPal && pal.isLucky === isLucky).nbCaught}` });
 
     const imageUrl = getPalImage(randomPal);
     if (imageUrl) {
