@@ -90,6 +90,18 @@ function addCaughtPal(userId, username, palName, rarity, isLucky) {
       nbCaught: 1,
       caughtAt: new Date().toISOString()
     });
+    if (rarity === 'Legendary') {
+      userData[userId].gold += 1500;
+    } else if (rarity === 'Epic') {
+      userData[userId].gold += 800;
+    } else if (rarity === 'Rare') {
+      userData[userId].gold += 300;
+    } else if (rarity === 'Common') {
+      userData[userId].gold += 100;
+    }
+    if (isLucky) {
+      userData[userId].gold += 1000;
+    }
   }
   else if (!isFirstCatch) {
     console.log("case 3");
@@ -98,6 +110,9 @@ function addCaughtPal(userId, username, palName, rarity, isLucky) {
     );
     if (palIndex !== -1) {
         userData[userId].caughtPals[palIndex].nbCaught++;
+    }
+    if (isLucky) {
+      userData[userId].gold += 1000;
     }
   }
 
