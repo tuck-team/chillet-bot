@@ -5,7 +5,7 @@ function tier(messageAuthor, userData, replyFunc) {
 
 	// Create embed
 	const embed = new EmbedBuilder()
-		.setColor('#8C1C98')
+		.setColor('#FFD700')
 		.setDescription(
 			`Current Tier: **${userPalData.tier}**\n` +
             `Tier 1: cost : **1000** <:Money:1352019542565720168> Unlocks Expeditions\n` +
