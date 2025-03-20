@@ -1,5 +1,3 @@
-const { EmbedBuilder } = require('discord.js');
-const { addCaughtPal } = require('../index');
 
 function getinc_child(male, female) {
     return {
@@ -14,6 +12,45 @@ function getchild(inc_child, userPalData) {
         rarity: inc_child.rarity,
         isLucky: Math.random() < (0.05 * userPalData.multiplier)
     }
+}
+
+function addCaughtPalv2(userPalData, palName, rarity, isLucky) {
+  // Check if this is the first time catching this Pal
+  const existingPalIndex = userPalData.caughtPals.findIndex(pal => pal.name === palName);
+  const isFirstCatch = existingPalIndex === -1;
+  let isFirstLucky = false;
+
+  // If this isn't the first catch and the new catch is lucky,
+  // check if a lucky version of this pal hasn't been caught previously.
+  if (!isFirstCatch && isLucky) {
+    const alreadyLuckyExists = userPalData.caughtPals.some(pal => pal.name === palName && pal.isLucky);
+    if (!alreadyLuckyExists) {
+      isFirstLucky = true;
+    }
+  }
+
+  if (isFirstCatch || isFirstLucky){
+    userPalData.caughtPals.push({
+      name: palName,
+      rarity: rarity,
+      isLucky: isLucky,
+      nbCaught: 1,
+      rank: 1,
+      caughtAt: new Date().toISOString()
+    });
+  }
+  else if (!isFirstCatch) {
+    const palIndex = userPalData.caughtPals.findIndex(
+        pal => pal.name === palName && pal.isLucky === isLucky
+    );
+    if (palIndex !== -1) {
+        userPalData.caughtPals[palIndex].nbCaught++;
+        if (userPalData.caughtPals[palIndex].nbCaught > 4^userPalData.caughtPals[palIndex].rank) {
+          userPalData.caughtPals[palIndex].rank++;
+          userPalData.caughtPals[palIndex].nbCaught = 1;
+        }
+    }
+  }
 }
 
 function incubateur(messageAuthor, userData, args, replyFunc) {
@@ -43,7 +80,7 @@ function incubateur(messageAuthor, userData, args, replyFunc) {
                 return false;
             }
             const child = getchild(incubator.child, userPalData);
-            addCaughtPal(messageAuthor.id, messageAuthor.username, child.name, child.rarity, child.isLucky);
+            addCaughtPalv2(userPalData, child.name, child.rarity, child.isLucky);
             return true;
         });
         if (claimedIncubators > 0) {
