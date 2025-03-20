@@ -63,6 +63,7 @@ function addCaughtPal(userId, username, palName, rarity, isLucky) {
       username: username,
       gold: 0,
       tier: 0,
+      lastPaycheck: null,
       caughtPals: []
     };
   }
@@ -201,6 +202,7 @@ const handleCommand = async (command, args, replyFunc, messageAuthor) => {
     topserv({ userData, pals, replyFunc });
   }
   config = getConfig();
+  saveUserData();
 };
 
 // Message event with cooldown
