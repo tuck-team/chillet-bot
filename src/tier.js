@@ -19,8 +19,7 @@ function tier(messageAuthor, userData, replyFunc) {
 			`<:T_itemicon_PalSphere_Exotic:1352292228105764906> Tier 9: **9000** <:Money:1352019542565720168> ???\n` +
 			`\n` +
             `**!tupgrade** to upgrade your tier <:Money:1352019542565720168><:Money:1352019542565720168>`
-		);
-
+		)
 	replyFunc({ embeds: [embed] });
 }
 

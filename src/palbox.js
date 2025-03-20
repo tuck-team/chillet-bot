@@ -25,7 +25,7 @@ function palbox(messageAuthor, userData, replyFunc) {
 	// Create embed
 	const embed = new EmbedBuilder()
 	    .setColor('#0099ff')
-	    .setTitle(`${messageAuthor.username}'s Palbox`)
+		.setAuthor({ name: `${messageAuthor.username}'s Palbox`, iconURL: messageAuthor.avatarURL() })
 	    .setDescription(
 			`Total Pals: ${counts.Legendary + counts.Epic + counts.Rare + counts.Common}\n` +
 			`Legendary: ${counts.Legendary}\n` +
