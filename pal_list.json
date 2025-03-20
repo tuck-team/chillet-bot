@@ -1,0 +1,517 @@
+[
+  {
+    "name": "Bellanoir",
+    "rarity": "Legendary",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_NightLady_icon_normal.png"
+  },
+  {
+    "name": "Bellanoir Libero",
+    "rarity": "Legendary",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_NightLady_Dark_icon_normal.png"
+  },
+  {
+    "name": "Frostallion",
+    "rarity": "Legendary",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_IceHorse_icon_normal.png"
+  },
+  {
+    "name": "Frostallion Noct",
+    "rarity": "Legendary",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_IceHorse_Dark_icon_normal.png"
+  },
+  {
+    "name": "Jetdragon",
+    "rarity": "Legendary",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_JetDragon_icon_normal.png"
+  },
+  {
+    "name": "Necromus",
+    "rarity": "Legendary",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_BlackCentaur_icon_normal.png"
+  },
+  {
+    "name": "Paladius",
+    "rarity": "Legendary",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_SaintCentaur_icon_normal.png"
+  },
+  {
+    "name": "Anubis",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Anubis_icon_normal.png"
+  },
+  {
+    "name": "Astegon",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_BlackMetalDragon_icon_normal.png"
+  },
+  {
+    "name": "Bastigor",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_SnowTigerBeastman_icon_normal.png"
+  },
+  {
+    "name": "Blazamut",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_KingBahamut_icon_normal.png"
+  },
+  {
+    "name": "Blazamut Ryu",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_KingBahamut_Dragon_icon_normal.png"
+  },
+  {
+    "name": "Blazehowl Noct",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Manticore_Dark_icon_normal.png"
+  },
+  {
+    "name": "Broncherry Aqua",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_SakuraSaurus_Water_icon_normal.png"
+  },
+  {
+    "name": "Elizabee",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_QueenBee_icon_normal.png"
+  },
+  {
+    "name": "Elphidran Aqua",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_FairyDragon_Water_icon_normal.png"
+  },
+  {
+    "name": "Faleris",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Horus_icon_normal.png"
+  },
+  {
+    "name": "Faleris Aqua",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Horus_Water_icon_normal.png"
+  },
+  {
+    "name": "Petallia",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_FlowerDoll_icon_normal.png"
+  },
+  {
+    "name": "Quivern Botan",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_SkyDragon_Grass_icon_normal.png"
+  },
+  {
+    "name": "Selyne",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_MoonQueen_icon_normal.png"
+  },
+  {
+    "name": "Silvegis",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_WhiteShieldDragon_icon_normal.png"
+  },
+  {
+    "name": "Suzaku",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Suzaku_icon_normal.png"
+  },
+  {
+    "name": "Suzaku Aqua",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Suzaku_Water_icon_normal.png"
+  },
+  {
+    "name": "Vaelet",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_VioletFairy_icon_normal.png"
+  },
+  {
+    "name": "Verdash",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_GrassRabbitMan_icon_normal.png"
+  },
+  {
+    "name": "Warsect",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_HerculesBeetle_icon_normal.png"
+  },
+  {
+    "name": "Warsect Terra",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_HerculesBeetle_Ground_icon_normal.png"
+  },
+  {
+    "name": "Wumpo Botan",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Yeti_Grass_icon_normal.png"
+  },
+  {
+    "name": "Xenogard",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_WhiteAlienDragon_icon_normal.png"
+  },
+  {
+    "name": "Xenolord",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_DarkMechaDragon_icon_normal.png"
+  },
+  {
+    "name": "Shadowbeak",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_BlackGriffon_icon_normal.png"
+  },
+  {
+    "name": "Relaxaurus",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_LazyDragon_icon_normal.png"
+  },
+  {
+    "name": "Relaxaurus Lux",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_LazyDragon_Electric_icon_normal.png"
+  },
+  {
+    "name": "Orserk",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_ThunderDragonMan_icon_normal.png"
+  },
+  {
+    "name": "Menasting",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_DarkScorpion_icon_normal.png"
+  },
+  {
+    "name": "Menasting Terra",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_DarkScorpion_Ground_icon_normal.png"
+  },
+  {
+    "name": "Mammorest",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_GrassMammoth_icon_normal.png"
+  },
+  {
+    "name": "Mammorest Cryst",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_GrassMammoth_Ice_icon_normal.png"
+  },
+  {
+    "name": "Lyleen Noct",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_LilyQueen_Dark_icon_normal.png"
+  },
+  {
+    "name": "Lyleen",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_LilyQueen_icon_normal.png"
+  },
+  {
+    "name": "Knocklem",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_WingGolem_icon_normal.png"
+  },
+  {
+    "name": "Kingpaca Cryst",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_KingAlpaca_Ice_icon_normal.png"
+  },
+  {
+    "name": "Kingpaca",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_KingAlpaca_icon_normal.png"
+  },
+  {
+    "name": "Jormuntide Ignis",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Umihebi_Fire_icon_normal.png"
+  },
+  {
+    "name": "Jormuntide",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Umihebi_icon_normal.png"
+  },
+  {
+    "name": "Helzephyr Lux",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_HadesBird_Electric_icon_normal.png"
+  },
+  {
+    "name": "Grizzbolt",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_ElecPanda_icon_normal.png"
+  },
+  {
+    "name": "Gildane",
+    "rarity": "Epic",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_GoldenHorse_icon_normal.png"
+  },
+  {
+    "name": "Azurmane",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_BlueThunderHorse_icon_normal.png"
+  },
+  {
+    "name": "Azurobe",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_BlueDragon_icon_normal.png"
+  },
+  {
+    "name": "Beakon",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_ThunderBird_icon_normal.png"
+  },
+  {
+    "name": "Blazehowl",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Manticore_icon_normal.png"
+  },
+  {
+    "name": "Broncherry",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_SakuraSaurus_icon_normal.png"
+  },
+  {
+    "name": "Bushi",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Ronin_icon_normal.png"
+  },
+  {
+    "name": "Bushi Noct",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Ronin_Dark_icon_normal.png"
+  },
+  {
+    "name": "Celesdir",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_WhiteDeer_icon_normal.png"
+  },
+  {
+    "name": "Chillet Ignis",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_WeaselDragon_Fire_icon_normal.png"
+  },
+  {
+    "name": "Cryolinx",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_WhiteTiger_icon_normal.png"
+  },
+  {
+    "name": "Cryolinx Terra",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_WhiteTiger_Ground_icon_normal.png"
+  },
+  {
+    "name": "Dazemu",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_FeatherOstrich_icon_normal.png"
+  },
+  {
+    "name": "Digtoise",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_DrillGame_icon_normal.png"
+  },
+  {
+    "name": "Dinossom",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_FlowerDinosaur_icon_normal.png"
+  },
+  {
+    "name": "Dinossom Lux",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_FlowerDinosaur_Electric_icon_normal.png"
+  },
+  {
+    "name": "Dogen",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_SifuDog_icon_normal.png"
+  },
+  {
+    "name": "Eikthyrdeer Terra",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Deer_Ground_icon_normal.png"
+  },
+  {
+    "name": "Elphidran",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_FairyDragon_icon_normal.png"
+  },
+  {
+    "name": "Felbat",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_CatVampire_icon_normal.png"
+  },
+  {
+    "name": "Gorirat",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Gorilla_icon_normal.png"
+  },
+  {
+    "name": "Gorirat Terra",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Gorilla_Ground_icon_normal.png"
+  },
+  {
+    "name": "Foxcicle",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_IceFox_icon_normal.png"
+  },
+  {
+    "name": "Penking",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_EmperorPenguin_icon_normal.png"
+  },
+  {
+    "name": "Pyrin",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_FireDog_icon_normal.png"
+  },
+  {
+    "name": "Pyrin Noct",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_FireDog_Dark_icon_normal.png"
+  },
+  {
+    "name": "Quivern",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_SkyDragon_icon_normal.png"
+  },
+  {
+    "name": "Ragnahawk",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_FireHawk_icon_normal.png"
+  },
+  {
+    "name": "Rayhound",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_ThunderDog_icon_normal.png"
+  },
+  {
+    "name": "Reptyro",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_FireRex_icon_normal.png"
+  },
+  {
+    "name": "Reptyro Cryst",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_FireRex_Ice_icon_normal.png"
+  },
+  {
+    "name": "Robinquill",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_RobinHood_icon_normal.png"
+  },
+  {
+    "name": "Robinquill Terra",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_RobinHood_Ground_icon_normal.png"
+  },
+  {
+    "name": "Shroomer Noct",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_MopKing_Dark_icon_normal.png"
+  },
+  {
+    "name": "Sibelyx",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_IceSnake_icon_normal.png"
+  },
+  {
+    "name": "Surfent Terra",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_SeaSnake_Ground_icon_normal.png"
+  },
+  {
+    "name": "Univolt",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_ThunderHorse_icon_normal.png"
+  },
+  {
+    "name": "Vanwyrm Cryst",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_WyvernMale_Ice_icon_normal.png"
+  },
+  {
+    "name": "Wumpo",
+    "rarity": "Rare",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Yeti_icon_normal.png"
+  },
+  {
+    "name": "Arsox",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_FireBull_icon_normal.png"
+  },
+  {
+    "name": "Beegarde",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_BeeWarrior_icon_normal.png"
+  },
+  {
+    "name": "Bristla",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_PlantSlime_icon_normal.png"
+  },
+  {
+    "name": "Caprity",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Creeper_icon_normal.png"
+  },
+  {
+    "name": "Cattiva",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_LittleBraver_icon_normal.png"
+  },
+  {
+    "name": "Chikipi",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_ChickenPal_icon_normal.png"
+  },
+  {
+    "name": "Chillet",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_WeaselDragon_icon_normal.png"
+  },
+  {
+    "name": "Cremis",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Rabbit_icon_normal.png"
+  },
+  {
+    "name": "Daedream",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_NightFairy_icon_normal.png"
+  },
+  {
+    "name": "Dumud",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_MudFish_icon_normal.png"
+  },
+  {
+    "name": "Eikthyrdeer",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Deer_icon_normal.png"
+  },
+  {
+    "name": "Fenglope",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_WildDog_icon_normal.png"
+  },
+  {
+    "name": "Pengullet",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Penguin_icon_normal.png"
+  },
+  {
+    "name": "Ribbuny",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_ElecRabbit_icon_normal.png"
+  },
+  {
+    "name": "Rushoar",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_Boar_icon_normal.png"
+  },
+  {
+    "name": "Tanzee",
+    "rarity": "Common",
+    "imageUrl": "https://palworld.gg/_ipx/q_80&s_130x130/images/full_palicon/T_MonkeyKing_icon_normal.png"
+  }
+]

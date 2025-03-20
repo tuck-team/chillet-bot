@@ -1,0 +1,369 @@
+{
+  "1286410310906937356": {
+    "username": "nemesis.debian",
+    "caughtPals": [
+      {
+        "name": "Dazzi",
+        "rarity": "Common",
+        "isLucky": true,
+        "caughtAt": "2025-03-19T21:23:48.487Z"
+      },
+      {
+        "name": "Bristla",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T21:26:11.335Z"
+      },
+      {
+        "name": "Chikipi",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T21:33:08.106Z"
+      },
+      {
+        "name": "Celaray",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T21:35:20.302Z"
+      },
+      {
+        "name": "Beegarde",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T21:41:07.440Z"
+      },
+      {
+        "name": "Relaxaurus Lux",
+        "rarity": "Rare",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T21:48:08.310Z"
+      },
+      {
+        "name": "Pengullet",
+        "rarity": "Common",
+        "isLucky": true,
+        "caughtAt": "2025-03-19T21:49:56.747Z"
+      },
+      {
+        "name": "Sparkit",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:05:47.318Z"
+      },
+      {
+        "name": "Astegon",
+        "rarity": "Epic",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:12:31.815Z"
+      },
+      {
+        "name": "Foxcicle",
+        "rarity": "Rare",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:39:25.430Z"
+      },
+      {
+        "name": "Eikthyrdeer",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:44:42.053Z"
+      },
+      {
+        "name": "Beakon",
+        "rarity": "Rare",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:47:33.470Z"
+      },
+      {
+        "name": "Dogen",
+        "rarity": "Rare",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:52:35.039Z"
+      },
+      {
+        "name": "Daedream",
+        "rarity": "Common",
+        "isLucky": false,
+        "isFirstCatch": true,
+        "caughtAt": "2025-03-19T23:00:22.329Z"
+      }
+    ]
+  },
+  "984082019778703360": {
+    "username": "ledernak",
+    "caughtPals": [
+      {
+        "name": "Fenglope",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T21:27:06.733Z"
+      }
+    ]
+  },
+  "627430995074875392": {
+    "username": "lycoris63",
+    "caughtPals": [
+      {
+        "name": "Woolipop",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T21:42:18.612Z"
+      },
+      {
+        "name": "Blazehowl Noct",
+        "rarity": "Epic",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T21:51:31.161Z"
+      },
+      {
+        "name": "Smokie",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:02:42.496Z"
+      },
+      {
+        "name": "Wumpo Botan",
+        "rarity": "Epic",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:08:10.389Z"
+      },
+      {
+        "name": "Verdash",
+        "rarity": "Epic",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:12:31.821Z"
+      },
+      {
+        "name": "Surfent Terra",
+        "rarity": "Rare",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:15:31.833Z"
+      },
+      {
+        "name": "Dumud",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:17:08.092Z"
+      },
+      {
+        "name": "Sweepa",
+        "rarity": "Rare",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:18:57.865Z"
+      },
+      {
+        "name": "Prunelia",
+        "rarity": "Rare",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:20:28.079Z"
+      },
+      {
+        "name": "Vanwyrm",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:22:23.586Z"
+      },
+      {
+        "name": "Prixter",
+        "rarity": "Rare",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:24:03.324Z"
+      },
+      {
+        "name": "Rushoar",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:38:07.920Z"
+      },
+      {
+        "name": "Chillet",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:39:56.398Z"
+      },
+      {
+        "name": "Sibelyx",
+        "rarity": "Rare",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:42:34.564Z"
+      },
+      {
+        "name": "Cremis",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:43:34.569Z"
+      },
+      {
+        "name": "Caprity",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:45:22.356Z"
+      },
+      {
+        "name": "Cremis",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:47:36.440Z"
+      },
+      {
+        "name": "Bristla",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:48:42.387Z"
+      },
+      {
+        "name": "Cattiva",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:50:47.622Z"
+      },
+      {
+        "name": "Menasting Terra",
+        "rarity": "Epic",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:51:48.958Z"
+      },
+      {
+        "name": "Ragnahawk",
+        "rarity": "Rare",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:52:39.416Z"
+      },
+      {
+        "name": "Mammorest",
+        "rarity": "Epic",
+        "isLucky": true,
+        "caughtAt": "2025-03-19T22:56:07.008Z"
+      },
+      {
+        "name": "Felbat",
+        "rarity": "Rare",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:57:12.442Z"
+      },
+      {
+        "name": "Dumud",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:58:13.268Z"
+      },
+      {
+        "name": "Caprity",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:59:33.548Z"
+      },
+      {
+        "name": "Pengullet",
+        "rarity": "Common",
+        "isLucky": false,
+        "isFirstCatch": true,
+        "caughtAt": "2025-03-19T23:00:27.516Z"
+      },
+      {
+        "name": "Chillet",
+        "rarity": "Common",
+        "isLucky": false,
+        "isFirstCatch": false,
+        "caughtAt": "2025-03-19T23:01:48.035Z"
+      },
+      {
+        "name": "Ragnahawk",
+        "rarity": "Rare",
+        "isLucky": false,
+        "isFirstCatch": false,
+        "caughtAt": "2025-03-19T22:03:58.370Z"
+      },
+      {
+        "name": "Gorirat",
+        "rarity": "Rare",
+        "isLucky": false,
+        "isFirstCatch": true,
+        "caughtAt": "2025-03-19T22:04:58.370Z"
+      },
+      {
+        "name": "Dumud",
+        "rarity": "Common",
+        "isLucky": false,
+        "isFirstCatch": false,
+        "caughtAt": "2025-03-19T22:07:49.584Z"
+      },
+      {
+        "name": "Chillet Ignis",
+        "rarity": "Rare",
+        "isLucky": false,
+        "isFirstCatch": true,
+        "caughtAt": "2025-03-19T22:10:09.257Z"
+      },
+      {
+        "name": "Eikthyrdeer",
+        "rarity": "Common",
+        "isLucky": false,
+        "isFirstCatch": true,
+        "caughtAt": "2025-03-19T22:11:39.650Z"
+      },
+      {
+        "name": "Ribbuny",
+        "rarity": "Common",
+        "isLucky": false,
+        "isFirstCatch": true,
+        "caughtAt": "2025-03-19T22:26:06.510Z"
+      },
+      {
+        "name": "Arsox",
+        "rarity": "Common",
+        "isLucky": false,
+        "isFirstCatch": true,
+        "caughtAt": "2025-03-19T22:31:53.968Z"
+      },
+      {
+        "name": "Mammorest Cryst",
+        "rarity": "Epic",
+        "isLucky": false,
+        "isFirstCatch": true,
+        "caughtAt": "2025-03-19T22:39:15.654Z"
+      }
+    ]
+  },
+  "432610292342587392": {
+    "username": "Mudae",
+    "caughtPals": [
+      {
+        "name": "Celaray",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:05:20.956Z"
+      },
+      {
+        "name": "Faleris",
+        "rarity": "Epic",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:48:42.488Z"
+      },
+      {
+        "name": "Azurmane",
+        "rarity": "Rare",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:50:47.625Z"
+      }
+    ]
+  },
+  "775393470868357191": {
+    "username": "meuleuteu_la_beuh",
+    "caughtPals": [
+      {
+        "name": "Ribbuny",
+        "rarity": "Common",
+        "isLucky": false,
+        "caughtAt": "2025-03-19T22:43:04.465Z"
+      },
+      {
+        "name": "Daedream",
+        "rarity": "Common",
+        "isLucky": false,
+        "isFirstCatch": true,
+        "caughtAt": "2025-03-19T22:26:33.969Z"
+      }
+    ]
+  }
+}
