@@ -71,9 +71,9 @@ function paldex({ messageAuthor, userData, pals, replyFunc }) {
 			`${createProgressBar(counts.Rare, totalCounts.Rare)}\n\n` +
 			`:star2: <:PalSphere_Giga:1352022327243706379> **Lucky Rare** (${counts.Lucky.Rare}/${totalCounts.Rare}) ${percentages.Lucky.Rare}%\n` +
 			`${createProgressBar(counts.Lucky.Rare, totalCounts.Rare)}\n\n` +
-			`<:PalSphere:1352018389253623809> **Common** (${counts.Common}/${totalCounts.Common}) ${percentages.Common}%\n` +
+			`<:T_itemicon_PalSphere:1352291984953577542> **Common** (${counts.Common}/${totalCounts.Common}) ${percentages.Common}%\n` +
 			`${createProgressBar(counts.Common, totalCounts.Common)}\n\n` +
-			`:star2: <:PalSphere:1352018389253623809> **Lucky Common** (${counts.Lucky.Common}/${totalCounts.Common}) ${percentages.Lucky.Common}%\n` +
+			`:star2: <:T_itemicon_PalSphere:1352291984953577542> **Lucky Common** (${counts.Lucky.Common}/${totalCounts.Common}) ${percentages.Lucky.Common}%\n` +
 			`${createProgressBar(counts.Lucky.Common, totalCounts.Common)}`
 	    )
 	    .setFooter({ text: 'Progress is based on the total number of Pals in each rarity.'});

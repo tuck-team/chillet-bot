@@ -171,7 +171,7 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData) 
   }
   if (command === 'help') {
     replyFunc(
-      `**<:PalSphere:1352018389253623809> Commands: <:PalSphere:1352018389253623809>**\n` +
+      `**<:T_itemicon_PalSphere:1352291984953577542> Commands: <:T_itemicon_PalSphere:1352291984953577542>**\n` +
       `${config.prefix}help - Show this help message\n` +
       `${config.prefix}cooldown - Check your cooldown status\n` +
       `${config.prefix}setcooldown [minutes] - Set the cooldown time (default: 5)\n` +
@@ -279,7 +279,7 @@ client.on(Events.MessageCreate, async message => {
 
     // Add first catch message if applicable
     if (isFirstCatch) {
-      description += '\n\n<:PalSphere:1352018389253623809> **FIRST CATCH!** <:PalSphere:1352018389253623809>';
+      description += '\n\n<:T_itemicon_PalSphere:1352291984953577542> **FIRST CATCH!** <:T_itemicon_PalSphere:1352291984953577542>';
     }
 
     // Create embed message
