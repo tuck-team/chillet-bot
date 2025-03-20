@@ -13,7 +13,7 @@ const { paldex, createProgressBar } = require('./src/paldex');
 const { prefix } = require('./src/prefix');
 const { tier, tupgrade } = require('./src/tier');
 const { topserv } = require('./src/topserv');
-const { trading } = require('./src/tradding');
+const { tradp, tradg } = require('./src/tradding');
 // Configuration
 const USER_DATA_FILE = 'user_data.json';
 const PAL_LIST_FILE = 'pal_list.json';
@@ -69,7 +69,9 @@ function addCaughtPal(userId, username, palName, rarity, isLucky) {
       tier: 0,
       multiplier: 1,
       lastPaycheck: null,
-      caughtPals: []
+      expeditionslots: 1,
+      caughtPals: [],
+      expeditions: []
     };
   }
 
@@ -215,8 +217,14 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData, 
   else if (command === 'tupgrade') {
     tupgrade(messageAuthor, userData, replyFunc);
   }
-  else if (command === 'trading') {
-    trading({ args, replyFunc }, userData, messageAuthor);
+  else if (command === 'tradp') {
+    tradp({ args, replyFunc }, userData, messageAuthor, message);
+  }
+  else if (command === 'tradg') {
+    tradg({ args, replyFunc }, userData, messageAuthor, message);
+  }
+  else if (command === 'expedition') {
+    expedition(messageAuthor, userData, args, replyFunc);
   }
   config = getConfig();
   saveUserData();

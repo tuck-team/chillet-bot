@@ -1,8 +1,7 @@
 // Save configuration
 
-const CONFIG_FILE = 'config.json';
-const fs = require('fs');
 const config = require('../config.json');
+const { saveConfig } = require('./config');
 
 let channels = config.channelId;
 
@@ -18,6 +17,7 @@ function channeladd(message) {
 		message.channel.send(`Channel added to the list`);
 		config.channelId.push(message.channel.id);
 	}
+    saveConfig();
 	return false;
 }
 
@@ -26,6 +26,7 @@ function channelremove(message) {
 		message.channel.send(`Channel removed from the list`);
 		config.channelId.pop(message.channel.id);
 	}
+    saveConfig();
 	return false;
 }
 
