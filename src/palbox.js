@@ -1,5 +1,13 @@
 const { EmbedBuilder } = require('discord.js');
 
+function rank_print(pal) {
+	let rank = '';
+	for (let i = 1; i < pal.rank; i++) {
+		rank += '✩';
+	}
+	return rank;
+}
+
 function palbox(messageAuthor, userData, replyFunc) {
 	const userPalData = userData[messageAuthor.id];
 
@@ -39,7 +47,7 @@ function palbox(messageAuthor, userData, replyFunc) {
 	['Legendary', 'Epic', 'Rare', 'Common'].forEach(rarity => {
 		const palsOfRarity = userPalData.caughtPals
 			.filter(pal => pal.rarity === rarity)
-			.map(pal => `${pal.isLucky ? '⭐ ' : ''}${pal.name}`)
+			.map(pal => `${pal.isLucky ? '⭐ ' : ''}${pal.name} ${rank_print(pal)}`)
 			.join('\n');
 
 	    if (palsOfRarity) {
