@@ -34,8 +34,34 @@ function tupgrade(messageAuthor, userData, replyFunc) {
 		replyFunc(`You don't have enough gold to upgrade your tier. You need **1000** <:Money:1352019542565720168>`);
 		return;
 	}
-	userPalData.gold -= 1000;
-	userPalData.tier += 1;
+	if (userPalData.tier == 0) {
+	    userPalData.gold -= 1000;
+        userPalData.tier += 1;
+    } else if (userPalData.tier == 1) {
+        userPalData.gold -= 2000;
+        userPalData.tier += 1;
+    } else if (userPalData.tier == 2) {
+        userPalData.gold -= 3000;
+        userPalData.tier += 1;
+    } else if (userPalData.tier == 3) {
+        userPalData.gold -= 4000;
+        userPalData.tier += 1;
+    } else if (userPalData.tier == 4) {
+        userPalData.gold -= 5000;
+        userPalData.tier += 1;
+    } else if (userPalData.tier == 5) {
+        userPalData.gold -= 6000;
+        userPalData.tier += 1;
+    } else if (userPalData.tier == 6) {
+        userPalData.gold -= 7000;
+        userPalData.tier += 1;
+    } else if (userPalData.tier == 7) {
+        userPalData.gold -= 8000;
+        userPalData.tier += 1;
+    } else if (userPalData.tier == 8) {
+        userPalData.gold -= 9000;
+        userPalData.tier += 1;
+    }
 	replyFunc(`You have upgraded your tier to **${userPalData.tier}**` +
         `\n` + `You have **${userPalData.gold}** <:Money:1352019542565720168> left`);
 }
