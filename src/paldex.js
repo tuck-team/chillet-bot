@@ -58,22 +58,31 @@ function paldex({ messageAuthor, userData, pals, replyFunc }) {
 	    .setTitle(`${messageAuthor.username}'s Paldex Progress`)
 	    .setDescription(
 			`**Total Pals Caught:** ${userPalData.caughtPals.length}/${pals.length}\n` +
-			`:star2: **Lucky Pals:** ${counts.Lucky.Common + counts.Lucky.Rare + counts.Lucky.Epic + counts.Lucky.Legendary}/${pals.length}\n\n` +
-			`<:PalSphere_Exotic:1352022219521527870> **Legendary** (${counts.Legendary}/${totalCounts.Legendary}) ${percentages.Legendary}%\n` +
+
+			`<:T_itemicon_PalSphere_Exotic:1352292228105764906> **Legendary** (${counts.Legendary}/${totalCounts.Legendary}) ${percentages.Legendary}%\n` +
 			`${createProgressBar(counts.Legendary, totalCounts.Legendary)}\n\n` +
-			`:star2: <:PalSphere_Exotic:1352022219521527870> **Lucky Legendary** (${counts.Lucky.Legendary}/${totalCounts.Legendary}) ${percentages.Lucky.Legendary}%\n` +
-			`${createProgressBar(counts.Lucky.Legendary, totalCounts.Legendary)}\n\n` +
-			`<:PalSphere_Master:1352022282490482828> **Epic** (${counts.Epic}/${totalCounts.Epic}) ${percentages.Epic}%\n` +
+
+			`<:T_itemicon_PalSphere_Master:1352292134136320033> **Epic** (${counts.Epic}/${totalCounts.Epic}) ${percentages.Epic}%\n` +
 			`${createProgressBar(counts.Epic, totalCounts.Epic)}\n\n` +
-			`:star2: <:PalSphere_Master:1352022282490482828> **Lucky Epic** (${counts.Lucky.Epic}/${totalCounts.Epic}) ${percentages.Lucky.Epic}%\n` +
-			`${createProgressBar(counts.Lucky.Epic, totalCounts.Epic)}\n\n` +
-			`<:PalSphere_Giga:1352022327243706379> **Rare** (${counts.Rare}/${totalCounts.Rare}) ${percentages.Rare}%\n` +
+
+			`<:T_itemicon_PalSphere_Giga:1352292073616707718> **Rare** (${counts.Rare}/${totalCounts.Rare}) ${percentages.Rare}%\n` +
 			`${createProgressBar(counts.Rare, totalCounts.Rare)}\n\n` +
-			`:star2: <:PalSphere_Giga:1352022327243706379> **Lucky Rare** (${counts.Lucky.Rare}/${totalCounts.Rare}) ${percentages.Lucky.Rare}%\n` +
-			`${createProgressBar(counts.Lucky.Rare, totalCounts.Rare)}\n\n` +
+
 			`<:T_itemicon_PalSphere:1352291984953577542> **Common** (${counts.Common}/${totalCounts.Common}) ${percentages.Common}%\n` +
 			`${createProgressBar(counts.Common, totalCounts.Common)}\n\n` +
-			`:star2: <:T_itemicon_PalSphere:1352291984953577542> **Lucky Common** (${counts.Lucky.Common}/${totalCounts.Common}) ${percentages.Lucky.Common}%\n` +
+
+			`:star2: **Total Lucky Pals:** ${counts.Lucky.Common + counts.Lucky.Rare + counts.Lucky.Epic + counts.Lucky.Legendary}/${pals.length}\n` +
+
+			`<:T_itemicon_PalSphere_Exotic:1352292228105764906> **Lucky Legendary** (${counts.Lucky.Legendary}/${totalCounts.Legendary}) ${percentages.Lucky.Legendary}%\n` +
+			`${createProgressBar(counts.Lucky.Legendary, totalCounts.Legendary)}\n\n` +
+
+			`<:T_itemicon_PalSphere_Master:1352292134136320033> **Lucky Epic** (${counts.Lucky.Epic}/${totalCounts.Epic}) ${percentages.Lucky.Epic}%\n` +
+			`${createProgressBar(counts.Lucky.Epic, totalCounts.Epic)}\n\n` +
+
+			`<:T_itemicon_PalSphere_Giga:1352292073616707718> **Lucky Rare** (${counts.Lucky.Rare}/${totalCounts.Rare}) ${percentages.Lucky.Rare}%\n` +
+			`${createProgressBar(counts.Lucky.Rare, totalCounts.Rare)}\n\n` +
+
+			`<:T_itemicon_PalSphere:1352291984953577542> **Lucky Common** (${counts.Lucky.Common}/${totalCounts.Common}) ${percentages.Lucky.Common}%\n` +
 			`${createProgressBar(counts.Lucky.Common, totalCounts.Common)}`
 	    )
 	    .setFooter({ text: 'Progress is based on the total number of Pals in each rarity.'});
