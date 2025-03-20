@@ -6,6 +6,10 @@ function expedition(messageAuthor, userData, args, replyFunc) {
 	const user = userData[messageAuthor.id];
 
 	if (args[0] === "start") {
+		if (user.expeditions.length >= user.expeditionslots) { // check if user has available slots
+			replyFunc("You have no available slots for expeditions. Upgrade your Tier to unlock more slots.");
+			return;
+		}
 		user.expeditions.push({
 			started: new Date().getTime(),
 			duration: 36000000, // 10 hours
@@ -13,10 +17,23 @@ function expedition(messageAuthor, userData, args, replyFunc) {
 	}
 
 	else if (args[0] === "claim") {
-		user.expeditions.push({
-			started: new Date().getTime(),
-			duration: 10,
+		const currentTime = new Date().getTime();
+		let claimedExpeditions = 0;
+
+		user.expeditions = user.expeditions.filter(expedition => {
+			if (expedition.started + expedition.duration <= currentTime) {
+				claimedExpeditions++;
+				user.gold += 100; // Reward 100 gold for each completed expedition
+				return false; // Remove completed expedition
+			}
+			return true; // Keep ongoing expeditions
 		});
+
+		if (claimedExpeditions > 0) {
+			replyFunc(`You have successfully claimed rewards from ${claimedExpeditions} completed expedition(s).`);
+		} else {
+			replyFunc("You have no completed expeditions to claim.");
+		}
 	}
 
 	else {
