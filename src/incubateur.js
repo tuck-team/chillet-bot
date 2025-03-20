@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
-const { addCaughtPal } = require('./index');
+const { addCaughtPal } = require('../index');
 
 function getinc_child(male, female) {
     return {
