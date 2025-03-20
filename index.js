@@ -82,6 +82,7 @@ function addCaughtPal(userId, username, palName, rarity, isLucky) {
       rarity: rarity,
       isLucky: isLucky,
       nbCaught: 1,
+      rank: 1,
       caughtAt: new Date().toISOString()
     });
   }
@@ -91,6 +92,10 @@ function addCaughtPal(userId, username, palName, rarity, isLucky) {
     );
     if (palIndex !== -1) {
         userData[userId].caughtPals[palIndex].nbCaught++;
+        if (userData[userId].caughtPals[palIndex].nbCaught > 4^userData[userId].caughtPals[palIndex].rank) {
+          userData[userId].caughtPals[palIndex].rank++;
+          userData[userId].caughtPals[palIndex].nbCaught = 1;
+        }
     }
   }
   saveUserData();
