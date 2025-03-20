@@ -30,6 +30,18 @@ const commands = [
     description: 'Show available commands'
   },
   {
+    name: 'debug',
+    description: 'Developper tools',
+    options: [
+      {
+        name: 'tool',
+        type: 3, // string type
+        description: 'Debug tool',
+        required: false
+      }
+    ]
+  },
+  {
     name: 'gold',
     description: 'Show user gold balance'
   },

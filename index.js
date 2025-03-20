@@ -180,7 +180,7 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData, 
       `**ramdom message** - ramdom pal catch`
     );
   }
-  else if (command === '!debug') {
+  else if (command === 'debug') {
     debug(messageAuthor, message, args, replyFunc);
   }
   else if (command === 'prefix') {
@@ -350,10 +350,15 @@ client.on(Events.MessageCreate, async message => {
 client.on(Events.InteractionCreate, async interaction => {
   if (!interaction.isCommand()) return;
 
-  const { commandName } = interaction;
+  const { commandName, options } = interaction;
+  console.log(`Received command: ${commandName}`);
+
+  // Retrieve options
+  const args = options.data.map(option => option.value);
+  console.log(`Options: ${args}`);
 
   // Handle the command
-  await handleCommand(commandName, [], (text) => interaction.reply(text), interaction.user, userData, interaction);
+  await handleCommand(commandName, args, (text) => interaction.reply(text), interaction.user, userData, interaction);
 });
 
 // Login to Discord with token from config
