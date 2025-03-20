@@ -13,6 +13,7 @@ const { paldex, createProgressBar } = require('./src/paldex');
 const { prefix } = require('./src/prefix');
 const { tier, tupgrade } = require('./src/tier');
 const { topserv } = require('./src/topserv');
+const { trading } = require('./src/tradding');
 // Configuration
 const USER_DATA_FILE = 'user_data.json';
 const PAL_LIST_FILE = 'pal_list.json';
@@ -213,6 +214,9 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData, 
   }
   else if (command === 'tupgrade') {
     tupgrade(messageAuthor, userData, replyFunc);
+  }
+  else if (command === 'trading') {
+    trading({ args, replyFunc }, userData, messageAuthor);
   }
   config = getConfig();
   saveUserData();
