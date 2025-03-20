@@ -159,7 +159,16 @@ client.once(Events.ClientReady, () => {
 });
 
 // Command handling function
-const handleCommand = async (command, args, replyFunc, messageAuthor) => {
+const handleCommand = async (command, args, replyFunc, messageAuthor, userData) => {
+  if (!userData[messageAuthor.id]) {
+    userData[messageAuthor.id] = {
+      username: messageAuthor.username,
+      gold: 0,
+      tier: 0,
+      lastPaycheck: null,
+      caughtPals: []
+    };
+  }
   if (command === 'help') {
     replyFunc(
       `**<:PalSphere:1352018389253623809> Commands: <:PalSphere:1352018389253623809>**\n` +
@@ -223,7 +232,7 @@ client.on(Events.MessageCreate, async message => {
     const args = message.content.slice(config.prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
 
-    await handleCommand(command, args, (text) => message.channel.send(text), message.author);
+    await handleCommand(command, args, (text) => message.channel.send(text), message.author, userData);
     return; // Exit after handling command
   }
 
@@ -297,7 +306,7 @@ client.on(Events.InteractionCreate, async interaction => {
   const { commandName } = interaction;
 
   // Handle the command
-  await handleCommand(commandName, [], (text) => interaction.reply(text), interaction.user);
+  await handleCommand(commandName, [], (text) => interaction.reply(text), interaction.user, userData);
 });
 
 // Login to Discord with token from config
