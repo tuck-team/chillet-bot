@@ -90,32 +90,15 @@ function addCaughtPal(userId, username, palName, rarity, isLucky) {
       nbCaught: 1,
       caughtAt: new Date().toISOString()
     });
-    if (rarity === 'Legendary') {
-      userData[userId].gold += 1500;
-    } else if (rarity === 'Epic') {
-      userData[userId].gold += 800;
-    } else if (rarity === 'Rare') {
-      userData[userId].gold += 300;
-    } else if (rarity === 'Common') {
-      userData[userId].gold += 100;
-    }
-    if (isLucky) {
-      userData[userId].gold += 1000;
-    }
   }
   else if (!isFirstCatch) {
-    console.log("case 3");
     const palIndex = userData[userId].caughtPals.findIndex(
         pal => pal.name === palName && pal.isLucky === isLucky
     );
     if (palIndex !== -1) {
         userData[userId].caughtPals[palIndex].nbCaught++;
     }
-    if (isLucky) {
-      userData[userId].gold += 1000;
-    }
   }
-
   saveUserData();
 
   return isFirstCatch;
@@ -293,8 +276,24 @@ client.on(Events.MessageCreate, async message => {
       : `${message.author.username} caught a **${randomPal}**!`;
 
     // Add first catch message if applicable
+    var goldToAdd = 0;
     if (isFirstCatch) {
-      description += '\n\n<:T_itemicon_PalSphere:1352291984953577542> **FIRST CATCH!** <:T_itemicon_PalSphere:1352291984953577542>';
+      if (rarity === 'Legendary') {
+        goldToAdd = 1500;
+      } else if (rarity === 'Epic') {
+        goldToAdd = 800;
+      } else if (rarity === 'Rare') {
+        goldToAdd = 300;
+      } else if (rarity === 'Common') {
+        goldToAdd = 100;
+      }
+    }
+    if (isLucky) {
+      goldToAdd += 1000;
+    }
+    userData[message.author.id].gold += goldToAdd;
+    if (isFirstCatch) {
+      description += '\n\n<:T_itemicon_PalSphere:1352291984953577542> **FIRST CATCH!** <:T_itemicon_PalSphere:1352291984953577542>\n Gains: **+' + goldToAdd + ' <:Money:1352019542565720168>**';
     }
 
     // Create embed message
