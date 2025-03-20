@@ -11,7 +11,13 @@ function getuserid(message) {
 
 function tradp({ args, replyFunc }, userData, messageAuthor, message) {
     const userPalData = userData[messageAuthor.id];
-    const palName = args[1].startsWith('<') ? args[0] : args[0] + ' ' + args[1];
+    const lucky = args[0] == "-l" ? true : false;
+    var palName;
+    if (lucky) {
+        palName = args[2].startsWith('<') ? args[1] : args[1] + ' ' + args[2];
+    } else {
+        palName = args[1].startsWith('<') ? args[0] : args[0] + ' ' + args[1];
+    }
     const tradpartner = userData[getuserid(message)];
 
     console.log(palName);
@@ -23,7 +29,12 @@ function tradp({ args, replyFunc }, userData, messageAuthor, message) {
         replyFunc('You and your partner need to be at least Tier 3 to use this command!');
         return;
     }
-    const userPals = userPalData.caughtPals.filter(p => p.name === palName);
+    var userPals;
+    if (lucky) {
+        userPals = userPalData.caughtPals.filter(p => p.name === palName && p.isLucky);
+    } else {
+        userPals = userPalData.caughtPals.filter(p => p.name === palName);
+    }
     if (userPals.length === 0) {
         replyFunc('You don\'t have any ' + palName + ' Pals!');
         return;

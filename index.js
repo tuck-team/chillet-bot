@@ -161,8 +161,15 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData, 
       `${config.prefix}pal [name] - Check a Pal's rarity\n` +
       `${config.prefix}palbox - View your caught Pals\n` +
       `${config.prefix}paldex - View Paldex completion status\n` +
-      `${config.prefix}topserv - View server leaderboard by Paldex completion` +
-      `${config.prefix}prefix [newPrefix] - Change the command prefix`
+      `${config.prefix}topserv - View server leaderboard by Paldex completion\n` +
+      `${config.prefix}prefix [newPrefix] - Change the command prefix\n` +
+      `${config.prefix}tradp (optional [-l] for lucky) [Palname] @who - Trade a Pal to a user\n` +
+      `${config.prefix}tradg [amount] @who - Trade gold to a user\n` +
+      `${config.prefix}expedition - Start an expedition\n` +
+      `${config.prefix}tier - Check your tier\n` +
+      `${config.prefix}tupgrade - Upgrade your tier\n` +
+      `${config.prefix}debug [channelid] - Debug command\n` +
+      `${config.prefix}debug testembed - Test embed command`
     );
   }
   else if (command === '!debug') {
