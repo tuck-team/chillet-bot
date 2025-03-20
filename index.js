@@ -7,6 +7,7 @@ const { cooldowns, cooldown, setCooldown } = require('./src/cooldown');
 const { debug } = require('./src/debug');
 const { expedition } = require('./src/expedition');
 const { gold, paycheck } = require('./src/gold');
+const { incubateur } = require('./src/incubateur');
 const { pal } = require('./src/pal');
 const { palbox } = require('./src/palbox');
 const { paldex, createProgressBar } = require('./src/paldex');
@@ -177,6 +178,8 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData, 
       `**${config.prefix}debug testembed** - Test embed command\n` +
       `**${config.prefix}gold** - Check your gold\n` +
       `**${config.prefix}paycheck** - Check your paycheck\n` +
+      `**${config.prefix}incubator start [male] [female]** - Start an incubator\n` +
+      `**${config.prefix}incubator claim** - Claim your incubator\n` +
       `**ramdom message** - ramdom pal catch`
     );
   }
@@ -225,6 +228,9 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData, 
   else if (command === 'expedition') {
     expedition(messageAuthor, userData, args, replyFunc);
   }
+  else if (command === 'incubator') {
+    incubateur(messageAuthor, userData, args, replyFunc);
+  }
   config = getConfig();
   saveUserData();
 };
@@ -268,8 +274,10 @@ client.on(Events.MessageCreate, async message => {
       multiplier: 1,
       lastPaycheck: null,
       expeditionslots: 1,
+      incubatorSlots: 1,
       caughtPals: [],
-      expeditions: []
+      expeditions: [],
+      incubator: []
     };
   }
   if (now - lastTrigger >= cooldownTime) {
@@ -298,7 +306,10 @@ client.on(Events.MessageCreate, async message => {
     const randomPal = getRandomPalByRarity(rarity);
 
     // Check if Pal is Lucky (5% chance)
-    const isLucky = Math.random() < (0.05 * userData[message.author.id].multiplier);
+    var isLucky = Math.random() < (0.05 * userData[message.author.id].multiplier);
+    if (userData[message.author.id].tier < 2) {
+      isLucky = false;
+    }
 
     // Add caught Pal to user data and check if it's their first time catching this Pal
     const isFirstCatch = addCaughtPal(message.author.id, message.author.username, randomPal, rarity, isLucky);

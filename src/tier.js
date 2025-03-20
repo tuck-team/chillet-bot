@@ -46,6 +46,7 @@ function tupgrade(messageAuthor, userData, replyFunc) {
     } else if (userPalData.tier == 3) {
         userPalData.gold -= 4000;
         userPalData.tier += 1;
+        userPalData.expeditionslots += 1;
     } else if (userPalData.tier == 4) {
         userPalData.gold -= 5000;
         userPalData.tier += 1;
@@ -58,6 +59,7 @@ function tupgrade(messageAuthor, userData, replyFunc) {
     } else if (userPalData.tier == 7) {
         userPalData.gold -= 8000;
         userPalData.tier += 1;
+        userPalData.expeditionslots += 2;
     } else if (userPalData.tier == 8) {
         userPalData.gold -= 9000;
         userPalData.tier += 1;

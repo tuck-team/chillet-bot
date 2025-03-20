@@ -4,7 +4,10 @@ const { createProgressBar } = require('./paldex');
 function expedition(messageAuthor, userData, args, replyFunc) {
 	if (messageAuthor.bot) return; // Ignore bot messages
 	const user = userData[messageAuthor.id];
-
+	if (user.tier < 1) {
+		replyFunc("You need to be at least Tier 1 to start expeditions.");
+		return;
+	}
 	if (args[0] === "start") {
 		if (user.expeditions.length >= user.expeditionslots) { // check if user has available slots
 			replyFunc("You have no available slots for expeditions. Upgrade your Tier to unlock more slots.");
