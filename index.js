@@ -159,16 +159,6 @@ client.once(Events.ClientReady, () => {
 
 // Command handling function
 const handleCommand = async (command, args, replyFunc, messageAuthor, userData) => {
-  if (!userData[messageAuthor.id]) {
-    userData[messageAuthor.id] = {
-      username: messageAuthor.username,
-      gold: 0,
-      tier: 0,
-      multiplier: 1,
-      lastPaycheck: null,
-      caughtPals: []
-    };
-  }
   if (command === 'help') {
     replyFunc(
       `**<:T_itemicon_PalSphere:1352291984953577542> Commands: <:T_itemicon_PalSphere:1352291984953577542>**\n` +
@@ -288,6 +278,16 @@ client.on(Events.MessageCreate, async message => {
   const lastTrigger = cooldowns.get(message.author.id) || 0;
   const cooldownTime = (config.cooldownMinutes || 5) * 60 * 1000; // Convert minutes to milliseconds
 
+  if (!userData[message.author.id]) {
+    userData[message.author.id] = {
+      username: message.author.username,
+      gold: 0,
+      tier: 0,
+      multiplier: 1,
+      lastPaycheck: null,
+      caughtPals: []
+    };
+  }
   if (now - lastTrigger >= cooldownTime) {
     // Update cooldown
     cooldowns.set(message.author.id, now);
