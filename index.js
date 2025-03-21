@@ -84,6 +84,7 @@ function addCaughtPal(userId, username, palName, rarity, isLucky) {
       isLucky: isLucky,
       nbCaught: 1,
       rank: 1,
+      busy: false,
       caughtAt: new Date().toISOString()
     });
   }

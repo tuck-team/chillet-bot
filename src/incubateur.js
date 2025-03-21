@@ -36,6 +36,7 @@ function addCaughtPalv2(userPalData, palName, rarity, isLucky) {
       isLucky: isLucky,
       nbCaught: 1,
       rank: 1,
+      busy: false,
       caughtAt: new Date().toISOString()
     });
   }
@@ -60,12 +61,30 @@ function incubateur(messageAuthor, userData, args, replyFunc) {
         return;
     }
     if (args[0] === "start") {
+        const male = userPalData.caughtPals.find(pal => (pal.name === args[1]));
+        const female = userPalData.caughtPals.find(pal => (pal.name === args[2]));
+        if (!male || !female) {
+            replyFunc("You don't have this Pal.");
+            return;
+        }
+        if (args.length < 3) {
+            replyFunc("You need to specify a male and a female Pal to start an incubator.");
+            return;
+        }
+        if (male.name === female.name) {
+            replyFunc("You can't start an incubator with the same Pal.");
+            return;
+        }
+        if (male.busy || female.busy) {
+            replyFunc("You can't start an incubator while one of your Pal is busy.");
+            return;
+        }
         if (userPalData.incubator.length === userPalData.incubatorSlots) {
             replyFunc("All your incubator slots are already used.\nTry to **claim** your incubator first. (**!incubator claim**)");
             return;
         }
         userPalData.incubator.push({
-            child: getinc_child(args[1], args[2]),
+            child: getinc_child(male.name, female.name),
             started: new Date().getTime(),
             duration: 300000,  //5min
         });
