@@ -37,9 +37,13 @@ function paycheck(messageAuthor, userData, replyFunc) {
 	} else {
 		const random = Math.random() * 100;
 		var payValue = Math.floor(random * 10);
-		payValue < 200 ? payValue += 200 : payValue;
-		payValue > 700 ? payValue -= 300 : payValue;
-
+		if (userPalData.tier < 6){
+			payValue < 200 ? payValue += 200 : payValue;
+			payValue > 700 ? payValue -= 300 : payValue;
+		} else {
+			payValue < 200 ? payValue += 400 : payValue;
+			payValue > 800 ? payValue -= 100 : payValue;
+		}
 		userPalData.gold += payValue;
 		replyFunc(`You have been paid **${payValue}**<:Money:1352019542565720168>!`);
 		userPalData.lastPaycheck = Date.now();
