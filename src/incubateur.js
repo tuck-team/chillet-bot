@@ -1,8 +1,47 @@
+const palList = require("../pal_list.json");
+const floor = Math.floor;
+const EmbedBuilder = require('discord.js').EmbedBuilder;
+let getRandomPalByRarity, getPalImage;
 
-function getinc_child(male, female) {
-    return {
-        name: "Incubator Child",    //TODO: change name
-        rarity: "Legendary"         //TODO: change rarity
+function getinc_child(userPalData, male, female) {
+    if (male.breeding_rank && female.breeding_rank) {
+        const breedingRank = floor((male.breeding_rank + female.breeding_rank + 1) / 2);
+        const palsWithBreedingRank = palList.filter(pal => pal.breeding_rank !== undefined && pal.breeding_rank !== "");
+        let closestPal = null;
+        if (palsWithBreedingRank.length > 0) {
+            let minDifference = Infinity;
+            // Find the pal with the closest breeding rank
+            palsWithBreedingRank.forEach(pal => {
+                const difference = Math.abs(parseInt(pal.breeding_rank) - parseInt(breedingRank));
+                if (difference < minDifference) {
+                    minDifference = difference;
+                    closestPal = pal;
+                }
+            });
+        }
+        const child = closestPal ? [closestPal] : [];
+        return {
+            name: child[0].name,
+            rarity: child[0].rarity
+        }
+    }
+    else {
+        const random = Math.random() * 100;
+        let rarity;
+        if (random < (3 * userPalData.multiplier)) {
+            rarity = 'Legendary';
+        } else if (random < (11 * userPalData.multiplier)) {
+            rarity = 'Epic';
+        } else if (random < (40 * userPalData.multiplier)) {
+            rarity = 'Rare';
+        } else {
+            rarity = 'Common';
+        }
+        const palObj = getRandomPalByRarity(rarity);
+        return {
+            name: palObj.name,
+            rarity: rarity
+        }
     }
 }
 
@@ -14,7 +53,7 @@ function getchild(inc_child, userPalData) {
     }
 }
 
-function addCaughtPalv2(userPalData, palName, rarity, isLucky) {
+async function addCaughtPalv2(userPalData, palName, rarity, isLucky, message) {
   // Check if this is the first time catching this Pal
   const existingPalIndex = userPalData.caughtPals.findIndex(pal => pal.name === palName);
   const isFirstCatch = existingPalIndex === -1;
@@ -46,15 +85,59 @@ function addCaughtPalv2(userPalData, palName, rarity, isLucky) {
     );
     if (palIndex !== -1) {
         userPalData.caughtPals[palIndex].nbCaught++;
-        if (userPalData.caughtPals[palIndex].nbCaught > 4^userPalData.caughtPals[palIndex].rank) {
+        if (userPalData.caughtPals[palIndex].nbCaught > Math.pow(4, userPalData.caughtPals[palIndex].rank)) {
           userPalData.caughtPals[palIndex].rank++;
           userPalData.caughtPals[palIndex].nbCaught = 1;
         }
     }
   }
+  let description = isLucky
+      ? `:star2: It's a **LUCKY** ${palName}, he's so big! :star2:`
+      : `It's a **${palName}**!`;
+
+    // Add first catch message if applicable
+    let color;
+    var goldToAdd = 0;
+    if (isFirstCatch) {
+      if (rarity === 'Legendary') {
+        color = '#FFD700';
+        goldToAdd = 1500;
+      } else if (rarity === 'Epic') {
+        color = '#9B30FF';
+        goldToAdd = 800;
+      } else if (rarity === 'Rare') {
+        color = '#0099ff';
+        goldToAdd = 300;
+      } else if (rarity === 'Common') {
+        color = '#808080';
+        goldToAdd = 100;
+      }
+    }
+    if (isLucky) {
+      goldToAdd += 1000;
+    }
+    userPalData.gold += goldToAdd;
+    if (isFirstCatch) {
+      description += '\n\n<:T_itemicon_PalSphere:1352291984953577542> **FIRST CATCH!** <:T_itemicon_PalSphere:1352291984953577542>\n Gains: **+' + goldToAdd + ' <:Money:1352019542565720168>**';
+    }
+
+    // Create embed message
+    const embed = new EmbedBuilder()
+      .setColor(color)
+      .setAuthor({ name: isLucky ? `caught a Lucky ${rarity} Pal!` : `caught a ${rarity} Pal!`, iconURL: message.author.avatarURL() })
+      .setDescription(description)
+      .setFooter({ text: `${palName} caught so far: ${userPalData.caughtPals.find(pal => pal.name === palName && pal.isLucky === isLucky).nbCaught}` });
+
+    const imageUrl = getPalImage(palName);
+    if (imageUrl) {
+      embed.setThumbnail(imageUrl);
+    }
+
+    // Send embed message
+    await message.channel.send({ embeds: [embed] });
 }
 
-function incubateur(messageAuthor, userData, args, replyFunc) {
+async function incubateur(messageAuthor, userData, args, replyFunc, message) {
     const userPalData = userData[messageAuthor.id];
     if (userPalData.tier < 5) {
         replyFunc("You need to be at least Tier 5 to use this command.");
@@ -84,7 +167,7 @@ function incubateur(messageAuthor, userData, args, replyFunc) {
             return;
         }
         userPalData.incubator.push({
-            child: getinc_child(male.name, female.name),
+            child: getinc_child(userPalData, male, female),
             started: new Date().getTime(),
             duration: 300000,  //5min
         });
@@ -99,7 +182,7 @@ function incubateur(messageAuthor, userData, args, replyFunc) {
                 return false;
             }
             const child = getchild(incubator.child, userPalData);
-            addCaughtPalv2(userPalData, child.name, child.rarity, child.isLucky);
+            addCaughtPalv2(userPalData, child.name, child.rarity, child.isLucky, message);
             return true;
         });
         if (claimedIncubators > 0) {
@@ -113,4 +196,9 @@ function incubateur(messageAuthor, userData, args, replyFunc) {
     }
 }
 
-module.exports = { incubateur };
+function initializeFunctions(functions) {
+  getRandomPalByRarity = functions.getRandomPalByRarity;
+  getPalImage = functions.getPalImage;
+}
+
+module.exports = { incubateur, initializeFunctions };

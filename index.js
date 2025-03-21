@@ -7,7 +7,7 @@ const { cooldowns, cooldown, setCooldown } = require('./src/cooldown');
 const { debug } = require('./src/debug');
 const { expedition } = require('./src/expedition');
 const { gold, paycheck } = require('./src/gold');
-const { incubateur } = require('./src/incubateur');
+const { incubateur, initializeFunctions } = require('./src/incubateur');
 const { pal } = require('./src/pal');
 const { palbox } = require('./src/palbox');
 const { paldex, createProgressBar } = require('./src/paldex');
@@ -94,7 +94,7 @@ function addCaughtPal(userId, username, palName, rarity, isLucky) {
     );
     if (palIndex !== -1) {
         userData[userId].caughtPals[palIndex].nbCaught++;
-        if (userData[userId].caughtPals[palIndex].nbCaught > 4^userData[userId].caughtPals[palIndex].rank) {
+        if (userData[userId].caughtPals[palIndex].nbCaught > 4 ** userData[userId].caughtPals[palIndex].rank) {
           userData[userId].caughtPals[palIndex].rank++;
           userData[userId].caughtPals[palIndex].nbCaught = 1;
         }
@@ -110,7 +110,7 @@ function getRandomPalByRarity(rarity) {
   const palsOfRarity = pals.filter(pal => pal.rarity === rarity);
 
   if (palsOfRarity.length === 0) return null;
-  return palsOfRarity[Math.floor(Math.random() * palsOfRarity.length)].name;
+  return palsOfRarity[Math.floor(Math.random() * palsOfRarity.length)];
 }
 
 // Function to get Pal image URL
@@ -230,7 +230,7 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData, 
     expedition(messageAuthor, userData, args, replyFunc);
   }
   else if (command === 'incubator') {
-    incubateur(messageAuthor, userData, args, replyFunc);
+    incubateur(messageAuthor, userData, args, replyFunc, message);
   }
   config = getConfig();
   saveUserData();
@@ -304,7 +304,8 @@ client.on(Events.MessageCreate, async message => {
     }
 
     // Get random Pal of the determined rarity
-    const randomPal = getRandomPalByRarity(rarity);
+    const randomPalObj = getRandomPalByRarity(rarity);
+    const randomPal = randomPalObj.name;
 
     // Check if Pal is Lucky (5% chance)
     var isLucky = Math.random() < (0.05 * userData[message.author.id].multiplier);
@@ -383,3 +384,6 @@ if (config.token) {
 } else {
   console.log('No token found in config.json. Please add your bot token and restart the application.');
 }
+
+// Add this line after the functions are defined to initialize them in incubateur.js
+initializeFunctions({ getRandomPalByRarity, getPalImage });
