@@ -42,6 +42,18 @@ const commands = [
     ]
   },
   {
+    name: 'prefix',
+    description: 'Change the prefix for the bot',
+    options: [
+      {
+        name: 'prefix',
+        type: 3, // string type
+        description: 'The new prefix for the bot', // <-- added description
+        required: false
+      }
+    ]
+  },
+  {
     name: 'gold',
     description: 'Show user gold balance'
   },
@@ -108,6 +120,72 @@ const commands = [
   {
     name: 'palbox',
     description: 'Open the palbox'
+  },
+  {
+    name: 'tradp',
+    description: 'Trade a pal with another user',
+    options: [
+      {
+        name: 'pal',
+        type: 3, // string type
+        description: 'The name of the pal',
+        required: true
+      },
+      {
+        name: 'user',
+        type: 6, // user type
+        description: 'The user to trade with'
+      }
+    ]
+  },
+  {
+    name: 'tradg',
+    description: 'Trade gold with another user',
+    options: [
+      {
+        name: 'amount',
+        type: 3, // string type
+        description: 'Amount of gold to trade',
+        required: true
+      },
+      {
+        name: 'user',
+        type: 6, // user type
+        description: 'The user to trade with'
+      }
+    ]
+  },
+  {
+    name: 'expedition',
+    description: 'Trade gold with another user',
+    options: [
+      {
+        name: 'action',
+        type: 3, // string type
+        description: 'Choose an action: start or claim',
+        required: false,
+        choices: [
+          { name: 'start', value: 'start' },
+          { name: 'claim', value: 'claim' }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'incubator',
+    description: 'Start incubating a pal',
+    options: [
+      {
+        name: 'action',
+        type: 3, // string type
+        description: 'Choose an action: start or claim',
+        required: true,
+        choices: [
+          { name: 'start', value: 'start' },
+          { name: 'claim', value: 'claim' }
+        ]
+      }
+    ]
   }
 ];
 
