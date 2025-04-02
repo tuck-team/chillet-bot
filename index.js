@@ -7,6 +7,7 @@ const { cooldowns, cooldown, setCooldown } = require('./src/cooldown');
 const { debug } = require('./src/debug');
 const { expedition } = require('./src/expedition');
 const { gold, paycheck } = require('./src/gold');
+const { help } = require('./src/help');
 const { incubateur, initializeFunctions } = require('./src/incubateur');
 const { pal } = require('./src/pal');
 const { palbox } = require('./src/palbox');
@@ -160,29 +161,7 @@ client.once(Events.ClientReady, () => {
 // Command handling function
 const handleCommand = async (command, args, replyFunc, messageAuthor, userData, message) => {
   if (command === 'help') {
-    replyFunc(
-      `**<:T_itemicon_PalSphere:1352291984953577542> Commands: <:T_itemicon_PalSphere:1352291984953577542>**\n` +
-      `**${config.prefix}help** - Show this help message\n` +
-      `**${config.prefix}cooldown** - Check your cooldown status\n` +
-      `**${config.prefix}setcooldown [minutes]** - Set the cooldown time (default: 5)\n` +
-      `**${config.prefix}pal [name]** - Check a Pal's rarity\n` +
-      `**${config.prefix}palbox** - View your caught Pals\n` +
-      `**${config.prefix}paldex** - View Paldex completion status\n` +
-      `**${config.prefix}topserv** - View server leaderboard by Paldex completion\n` +
-      `**${config.prefix}prefix [newPrefix]** - Change the command prefix\n` +
-      `**${config.prefix}tradp (optional [-l] for lucky) [Palname] @who** - Trade a Pal to a user\n` +
-      `**${config.prefix}tradg [amount] @who** - Trade gold to a user\n` +
-      `**${config.prefix}expedition** - Start an expedition\n` +
-      `**${config.prefix}tier** - Check your tier\n` +
-      `**${config.prefix}tupgrade** - Upgrade your tier\n` +
-      `**${config.prefix}debug [channelid]** - Debug command\n` +
-      `**${config.prefix}debug testembed** - Test embed command\n` +
-      `**${config.prefix}gold** - Check your gold\n` +
-      `**${config.prefix}paycheck** - Check your paycheck\n` +
-      `**${config.prefix}incubator start [male] [female]** - Start an incubator\n` +
-      `**${config.prefix}incubator claim** - Claim your incubator\n` +
-      `**Random message** - Random pal catch`
-    );
+    help(messageAuthor, replyFunc);
   }
   else if (command === 'debug') {
     debug(messageAuthor, message, args, replyFunc);
@@ -209,7 +188,7 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData, 
     pal({ args, pals, replyFunc }, userData, messageAuthor);
   }
   else if (command === 'paldex') {
-    paldex({ messageAuthor, userData, pals, replyFunc });
+    paldex(messageAuthor, userData, pals, replyFunc);
   }
   else if (command === 'topserv') {
     topserv({ userData, pals, replyFunc });
@@ -340,6 +319,18 @@ client.on(Events.MessageCreate, async message => {
     userData[message.author.id].gold += goldToAdd;
     if (isFirstCatch) {
       description += '\n\n<:T_itemicon_PalSphere:1352291984953577542> **FIRST CATCH!** <:T_itemicon_PalSphere:1352291984953577542>\n Gains: **+' + goldToAdd + ' <:Money:1352019542565720168>**';
+    }
+    // Check for rank up
+    const caughtPal = userData[message.author.id].caughtPals.find(pal => pal.name === randomPal && pal.isLucky === isLucky);
+    if (caughtPal) {
+      const rankUpThresholds = [5, 20, 50, 100];
+      const currentRank = caughtPal.rank;
+      const nextRankThreshold = rankUpThresholds[currentRank - 1] || Infinity;
+
+      if (caughtPal.nbCaught === nextRankThreshold) {
+      caughtPal.rank++;
+      description += `\n\n:arrow_up: **Rank Up!** ${randomPal} is now Rank ${caughtPal.rank}! :arrow_up:`;
+      }
     }
 
     // Create embed message

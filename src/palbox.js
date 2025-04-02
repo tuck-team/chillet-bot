@@ -1,4 +1,5 @@
 const { EmbedBuilder } = require('discord.js');
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 
 function rank_print(pal) {
 	let rank = '';
@@ -30,35 +31,72 @@ function palbox(messageAuthor, userData, replyFunc) {
 		if (pal.isLucky) counts.Lucky += pal.nbCaught;
 	});
 
-	// Create embed
-	const embed = new EmbedBuilder()
-	    .setColor('#0099ff')
-		.setAuthor({ name: `${messageAuthor.username}'s Palbox`, iconURL: messageAuthor.avatarURL() })
-	    .setDescription(
-			`Total Pals: ${counts.Legendary + counts.Epic + counts.Rare + counts.Common}\n` +
-			`Legendary: ${counts.Legendary}\n` +
-			`Epic: ${counts.Epic}\n` +
-			`Rare: ${counts.Rare}\n` +
-			`Common: ${counts.Common}\n` +
-			`Lucky Pals: ${counts.Lucky}`
-	    );
-
-	// Add fields for each rarity
-	['Legendary', 'Epic', 'Rare', 'Common'].forEach(rarity => {
+	// Create pages for each rarity
+	const rarities = ['Legendary', 'Epic', 'Rare', 'Common'];
+	const pages = rarities.map(rarity => {
 		const palsOfRarity = userPalData.caughtPals
 			.filter(pal => pal.rarity === rarity)
 			.map(pal => `${pal.isLucky ? '⭐ ' : ''}${pal.name} ${rank_print(pal)}`)
-			.join('\n');
+			.join('\n') || 'None';
 
-	    if (palsOfRarity) {
-			embed.addFields({
-		        name: `${rarity} Pals`,
-		        value: palsOfRarity || 'None'
-			});
-	}
+		return new EmbedBuilder()
+			.setColor('#0099ff')
+			.setAuthor({ name: `${messageAuthor.username}'s Palbox`, iconURL: messageAuthor.avatarURL() })
+			.setTitle(`${rarity} Pals`)
+			.setDescription(palsOfRarity)
+			.setFooter({ text: `Completion: ${counts[rarity]} caught` });
 	});
 
-	replyFunc({ embeds: [embed] });
+	let currentPage = 0;
+
+	// Create buttons
+	const buttons = new ActionRowBuilder()
+		.addComponents(
+			new ButtonBuilder()
+				.setCustomId('Legendary')
+				.setEmoji('<:T_itemicon_PalSphere_Exotic:1352292228105764906>')
+				.setStyle(ButtonStyle.Secondary),
+			new ButtonBuilder()
+				.setCustomId('Epic')
+				.setEmoji('<:T_itemicon_PalSphere_Master:1352292134136320033>')
+				.setStyle(ButtonStyle.Secondary),
+			new ButtonBuilder()
+				.setCustomId('Rare')
+				.setEmoji('<:T_itemicon_PalSphere_Giga:1352292073616707718>')
+				.setStyle(ButtonStyle.Secondary),
+			new ButtonBuilder()
+				.setCustomId('Common')
+				.setEmoji('<:T_itemicon_PalSphere:1352291984953577542>')
+				.setStyle(ButtonStyle.Secondary)
+		);
+
+	// Send initial message
+	replyFunc({ embeds: [pages[currentPage]], components: [buttons] }).then(sentMessage => {
+		const collector = sentMessage.createMessageComponentCollector({ time: 60000 });
+
+		collector.on('collect', interaction => {
+			if (interaction.user.id !== messageAuthor.id) {
+				interaction.reply({ content: 'These buttons are not for you!', ephemeral: true });
+				return;
+			}
+
+			if (interaction.customId === 'Legendary') {
+				currentPage = rarities.indexOf('Legendary');
+			} else if (interaction.customId === 'Epic') {
+				currentPage = rarities.indexOf('Epic');
+			} else if (interaction.customId === 'Rare') {
+				currentPage = rarities.indexOf('Rare');
+			} else if (interaction.customId === 'Common') {
+				currentPage = rarities.indexOf('Common');
+			}
+
+			interaction.update({ embeds: [pages[currentPage]], components: [buttons] });
+		});
+
+		collector.on('end', () => {
+			sentMessage.edit({ components: [] });
+		});
+	});
 }
 
 module.exports = { palbox };

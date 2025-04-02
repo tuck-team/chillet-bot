@@ -13,7 +13,7 @@ function cooldown(messageAuthor, replyFunc) {
       replyFunc('You can trigger the bot\'s reply now!');
     } else {
       const minutesLeft = Math.ceil(timeLeft / 60000);
-      replyFunc(`You need to wait ${minutesLeft} minute${minutesLeft !== 1 ? 's' : ''} before triggering the bot's reply again.`);
+      replyFunc(`You need to wait **${minutesLeft} min** before triggering the bot's reply again.`);
     }
 }
 

@@ -1,11 +1,11 @@
 {
   "1286410310906937356": {
     "username": "nemesis.debian",
-    "gold": 1139,
-    "tier": 3,
+    "gold": 167,
+    "tier": 5,
     "multiplier": 1,
     "lastPaycheck": 1742610358577,
-    "expeditionslots": 999,
+    "expeditionslots": 1000,
     "caughtPals": [
       {
         "name": "Chillet",
@@ -169,66 +169,63 @@
         "rank": 1,
         "busy": false,
         "caughtAt": "2025-04-01T08:57:09.688Z"
+      },
+      {
+        "name": "Reindrix",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-02T00:21:51.879Z"
+      },
+      {
+        "name": "Killamari",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-02T00:39:03.188Z"
+      },
+      {
+        "name": "Mozzarina",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-02T00:52:16.945Z"
+      },
+      {
+        "name": "Dinossom_Lux",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-02T00:55:23.994Z"
+      },
+      {
+        "name": "Mimog",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-02T01:15:23.635Z"
+      },
+      {
+        "name": "Foxparks_Cryst",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-02T01:46:31.969Z"
       }
     ],
-    "expeditions": [
-      {
-        "started": 1743497863364,
-        "duration": 36000000
-      },
-      {
-        "started": 1743497864811,
-        "duration": 36000000
-      },
-      {
-        "started": 1743497866061,
-        "duration": 36000000
-      },
-      {
-        "started": 1743497867122,
-        "duration": 36000000
-      },
-      {
-        "started": 1743497868923,
-        "duration": 36000000
-      },
-      {
-        "started": 1743497870279,
-        "duration": 36000000
-      },
-      {
-        "started": 1743497871628,
-        "duration": 36000000
-      },
-      {
-        "started": 1743497872755,
-        "duration": 36000000
-      },
-      {
-        "started": 1743497873891,
-        "duration": 36000000
-      },
-      {
-        "started": 1743497875041,
-        "duration": 36000000
-      },
-      {
-        "started": 1743497876217,
-        "duration": 36000000
-      },
-      {
-        "started": 1743497877244,
-        "duration": 36000000
-      },
-      {
-        "started": 1743498182037,
-        "duration": 36000000
-      },
-      {
-        "started": 1743498205579,
-        "duration": 36000000
-      }
-    ]
+    "expeditions": []
   },
   "627430995074875392": {
     "username": "lycoris63",
