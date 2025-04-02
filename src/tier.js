@@ -66,7 +66,7 @@ function tupgrade(messageAuthor, userData, replyFunc) {
         userPalData.tier += 1;
     }
 	replyFunc(`You have upgraded your tier to **${userPalData.tier}**` +
-        `\n` + `You have **${userPalData.gold}** <:Money:1352019542565720168> left`);
+        `\n` + `You have **${userPalData.gold}**<:Money:1352019542565720168> left`);
 }
 
 module.exports = { tier, tupgrade };

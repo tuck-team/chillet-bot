@@ -17,23 +17,26 @@ function expedition(messageAuthor, userData, args, replyFunc) {
 			started: new Date().getTime(),
 			duration: 36000000, // 10 hours
 		});
+		replyFunc('✅ Expedition started! You can claim your rewards in 10 hours.');
 	}
 
 	else if (args[0] === "claim") {
 		const currentTime = new Date().getTime();
+		var goldEarned = 0;
 		let claimedExpeditions = 0;
 
 		user.expeditions = user.expeditions.filter(expedition => {
 			if (expedition.started + expedition.duration <= currentTime) {
 				claimedExpeditions++;
-				user.gold += 100; // Reward 100 gold for each completed expedition
+				const reward = Math.floor(Math.random() * (700 - 400 + 1)) + 400; // Random reward between 400 and 700
+				user.gold += reward; // Add the reward to user's gold
 				return false; // Remove completed expedition
 			}
 			return true; // Keep ongoing expeditions
 		});
 
 		if (claimedExpeditions > 0) {
-			replyFunc(`You have successfully claimed rewards from ${claimedExpeditions} completed expedition(s).`);
+			replyFunc(`You have successfully claimed rewards from ${claimedExpeditions} completed expedition(s), earned ${goldEarned}<:Money:1352019542565720168>.`);
 		} else {
 			replyFunc("You have no completed expeditions to claim.");
 		}

@@ -181,7 +181,7 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData, 
       `**${config.prefix}paycheck** - Check your paycheck\n` +
       `**${config.prefix}incubator start [male] [female]** - Start an incubator\n` +
       `**${config.prefix}incubator claim** - Claim your incubator\n` +
-      `**ramdom message** - ramdom pal catch`
+      `**Random message** - Random pal catch`
     );
   }
   else if (command === 'debug') {

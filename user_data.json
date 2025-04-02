@@ -1,0 +1,536 @@
+{
+  "1286410310906937356": {
+    "username": "nemesis.debian",
+    "gold": 1139,
+    "tier": 3,
+    "multiplier": 1,
+    "lastPaycheck": 1742610358577,
+    "expeditionslots": 999,
+    "caughtPals": [
+      {
+        "name": "Chillet",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "caughtAt": "2025-03-20T19:22:37.058Z"
+      },
+      {
+        "name": "Cryolinx Terra",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 2,
+        "caughtAt": "2025-03-20T19:40:12.103Z"
+      },
+      {
+        "name": "Ragnahawk",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-20T20:23:21.841Z"
+      },
+      {
+        "name": "Gumoss",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-20T22:20:36.424Z"
+      },
+      {
+        "name": "Beakon",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-21T00:00:43.333Z"
+      },
+      {
+        "name": "Sparkit",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-21T00:06:27.709Z"
+      },
+      {
+        "name": "Kikit",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-21T00:45:26.662Z"
+      },
+      {
+        "name": "Bushi_Noct",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-21T15:36:40.238Z"
+      },
+      {
+        "name": "Leezpunk",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-21T15:44:26.674Z"
+      },
+      {
+        "name": "Cremis",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-21T15:52:33.360Z"
+      },
+      {
+        "name": "Rayhound",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-22T01:50:43.165Z"
+      },
+      {
+        "name": "Fenglope_Lux",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-22T02:25:06.149Z"
+      },
+      {
+        "name": "Kitsun_Noct",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-31T00:19:51.417Z"
+      },
+      {
+        "name": "Wixen",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-31T00:59:33.072Z"
+      },
+      {
+        "name": "Silvegis",
+        "rarity": "Epic",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-31T01:08:53.926Z"
+      },
+      {
+        "name": "Melpaca",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-31T01:25:15.853Z"
+      },
+      {
+        "name": "Dumud",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-31T01:37:13.075Z"
+      },
+      {
+        "name": "Sootseer",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-31T01:47:10.178Z"
+      },
+      {
+        "name": "Croajiro",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-01T08:57:09.688Z"
+      }
+    ],
+    "expeditions": [
+      {
+        "started": 1743497863364,
+        "duration": 36000000
+      },
+      {
+        "started": 1743497864811,
+        "duration": 36000000
+      },
+      {
+        "started": 1743497866061,
+        "duration": 36000000
+      },
+      {
+        "started": 1743497867122,
+        "duration": 36000000
+      },
+      {
+        "started": 1743497868923,
+        "duration": 36000000
+      },
+      {
+        "started": 1743497870279,
+        "duration": 36000000
+      },
+      {
+        "started": 1743497871628,
+        "duration": 36000000
+      },
+      {
+        "started": 1743497872755,
+        "duration": 36000000
+      },
+      {
+        "started": 1743497873891,
+        "duration": 36000000
+      },
+      {
+        "started": 1743497875041,
+        "duration": 36000000
+      },
+      {
+        "started": 1743497876217,
+        "duration": 36000000
+      },
+      {
+        "started": 1743497877244,
+        "duration": 36000000
+      },
+      {
+        "started": 1743498182037,
+        "duration": 36000000
+      },
+      {
+        "started": 1743498205579,
+        "duration": 36000000
+      }
+    ]
+  },
+  "627430995074875392": {
+    "username": "lycoris63",
+    "gold": 2690,
+    "tier": 3,
+    "multiplier": 1,
+    "lastPaycheck": 1742517954620,
+    "expeditionslots": 1,
+    "caughtPals": [
+      {
+        "name": "Jolthog",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "caughtAt": "2025-03-20T19:23:31.229Z"
+      },
+      {
+        "name": "Menasting Terra",
+        "rarity": "Epic",
+        "isLucky": false,
+        "nbCaught": 1,
+        "caughtAt": "2025-03-20T19:38:28.452Z"
+      },
+      {
+        "name": "Dumud",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "caughtAt": "2025-03-20T19:42:37.820Z"
+      },
+      {
+        "name": "Smokie",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "caughtAt": "2025-03-20T19:51:56.956Z"
+      },
+      {
+        "name": "Kitsun",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "caughtAt": "2025-03-20T20:05:19.251Z"
+      },
+      {
+        "name": "Fuddler",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-20T20:40:29.133Z"
+      },
+      {
+        "name": "Omascul",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-20T20:46:10.232Z"
+      },
+      {
+        "name": "Vixy",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-20T20:55:09.582Z"
+      },
+      {
+        "name": "Gorirat",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-20T21:00:33.682Z"
+      },
+      {
+        "name": "Ribbuny",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-20T21:44:42.713Z"
+      },
+      {
+        "name": "Chillet",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-20T22:27:40.192Z"
+      },
+      {
+        "name": "Felbat",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-20T22:39:20.692Z"
+      },
+      {
+        "name": "Tanzee",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-20T23:55:26.503Z"
+      },
+      {
+        "name": "Prixter",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-21T00:01:56.998Z"
+      },
+      {
+        "name": "Vanwyrm Cryst",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-21T00:07:40.927Z"
+      },
+      {
+        "name": "Ragnahawk",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-21T00:17:39.463Z"
+      },
+      {
+        "name": "Bellanoir Libero",
+        "rarity": "Legendary",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-21T00:27:40.355Z"
+      },
+      {
+        "name": "Petallia",
+        "rarity": "Epic",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-21T00:35:04.471Z"
+      },
+      {
+        "name": "Nitewing",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-21T00:45:14.989Z"
+      },
+      {
+        "name": "Celaray",
+        "rarity": "Common",
+        "isLucky": true,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-21T16:07:09.370Z"
+      },
+      {
+        "name": "Foxparks",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-21T16:31:35.015Z"
+      },
+      {
+        "name": "Woolipop",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-22T19:00:25.193Z"
+      }
+    ],
+    "expeditions": [
+      {
+        "started": 1742507163553,
+        "duration": 36000000
+      }
+    ]
+  },
+  "499520737737179136": {
+    "username": "gnx__",
+    "gold": 100,
+    "tier": 0,
+    "multiplier": 1,
+    "lastPaycheck": null,
+    "expeditionslots": 1,
+    "caughtPals": [
+      {
+        "name": "Fuddler",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "caughtAt": "2025-03-20T22:28:18.767Z"
+      }
+    ],
+    "expeditions": []
+  },
+  "602214030580514823": {
+    "username": "katuyo",
+    "gold": 100,
+    "tier": 0,
+    "multiplier": 1,
+    "lastPaycheck": null,
+    "expeditionslots": 1,
+    "incubatorSlots": 1,
+    "caughtPals": [
+      {
+        "name": "Killamari",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-21T16:10:03.518Z"
+      }
+    ],
+    "expeditions": [],
+    "incubator": []
+  },
+  "529697058198913035": {
+    "username": "klapodow",
+    "gold": 2006,
+    "tier": 0,
+    "multiplier": 1,
+    "lastPaycheck": 1742610365723,
+    "expeditionslots": 1,
+    "incubatorSlots": 1,
+    "caughtPals": [
+      {
+        "name": "Bellanoir",
+        "rarity": "Legendary",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-22T01:45:35.839Z"
+      },
+      {
+        "name": "Celaray",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-22T01:50:56.153Z"
+      },
+      {
+        "name": "Croajiro",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-22T01:56:22.387Z"
+      }
+    ],
+    "expeditions": [],
+    "incubator": []
+  },
+  "775393470868357191": {
+    "username": "meuleuteu_la_beuh",
+    "gold": 400,
+    "tier": 0,
+    "multiplier": 1,
+    "lastPaycheck": null,
+    "expeditionslots": 1,
+    "incubatorSlots": 1,
+    "caughtPals": [
+      {
+        "name": "Grintale",
+        "rarity": "Rare",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-22T01:45:35.843Z"
+      },
+      {
+        "name": "Nitewing",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-03-22T01:55:57.618Z"
+      }
+    ],
+    "expeditions": [],
+    "incubator": []
+  }
+}
