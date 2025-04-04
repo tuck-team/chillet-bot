@@ -1,7 +1,7 @@
 {
   "1286410310906937356": {
     "username": "nemesis.debian",
-    "gold": 167,
+    "gold": 367,
     "tier": 5,
     "multiplier": 1,
     "lastPaycheck": 1742610358577,
@@ -138,7 +138,7 @@
         "name": "Melpaca",
         "rarity": "Common",
         "isLucky": false,
-        "nbCaught": 1,
+        "nbCaught": 3,
         "rank": 1,
         "busy": false,
         "caughtAt": "2025-03-31T01:25:15.853Z"
@@ -223,17 +223,35 @@
         "rank": 1,
         "busy": false,
         "caughtAt": "2025-04-02T01:46:31.969Z"
+      },
+      {
+        "name": "Gobfin_Ignis",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-02T20:32:16.704Z"
+      },
+      {
+        "name": "Eikthyrdeer",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-02T22:19:34.200Z"
       }
     ],
     "expeditions": []
   },
   "627430995074875392": {
     "username": "lycoris63",
-    "gold": 2690,
-    "tier": 3,
+    "gold": 3890,
+    "tier": 4,
     "multiplier": 1,
     "lastPaycheck": 1742517954620,
-    "expeditionslots": 1,
+    "expeditionslots": 2,
     "caughtPals": [
       {
         "name": "Jolthog",
@@ -282,7 +300,7 @@
         "name": "Omascul",
         "rarity": "Common",
         "isLucky": false,
-        "nbCaught": 1,
+        "nbCaught": 2,
         "rank": 1,
         "caughtAt": "2025-03-20T20:46:10.232Z"
       },
@@ -314,7 +332,7 @@
         "name": "Chillet",
         "rarity": "Common",
         "isLucky": false,
-        "nbCaught": 1,
+        "nbCaught": 2,
         "rank": 1,
         "caughtAt": "2025-03-20T22:27:40.192Z"
       },
@@ -409,6 +427,78 @@
         "rank": 1,
         "busy": false,
         "caughtAt": "2025-03-22T19:00:25.193Z"
+      },
+      {
+        "name": "Cinnamoth",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-02T14:03:01.071Z"
+      },
+      {
+        "name": "Jetdragon",
+        "rarity": "Legendary",
+        "isLucky": true,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-02T18:57:58.368Z"
+      },
+      {
+        "name": "Killamari",
+        "rarity": "Common",
+        "isLucky": true,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-02T19:16:59.750Z"
+      },
+      {
+        "name": "Beegarde",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-02T22:32:22.800Z"
+      },
+      {
+        "name": "Helzephyr",
+        "rarity": "Rare",
+        "isLucky": true,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-03T13:59:43.930Z"
+      },
+      {
+        "name": "Pengullet",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-03T15:20:12.306Z"
+      },
+      {
+        "name": "Tarantiss",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-03T19:12:07.980Z"
+      },
+      {
+        "name": "Loupmoon",
+        "rarity": "Common",
+        "isLucky": false,
+        "nbCaught": 1,
+        "rank": 1,
+        "busy": false,
+        "caughtAt": "2025-04-04T00:33:27.298Z"
       }
     ],
     "expeditions": [
