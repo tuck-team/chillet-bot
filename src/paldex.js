@@ -1,6 +1,6 @@
 const { EmbedBuilder } = require('discord.js');
 
-function paldex({ messageAuthor, userData, pals, replyFunc }) {
+function paldex(messageAuthor, userData, pals, replyFunc) {
 	const userPalData = userData[messageAuthor.id] || { caughtPals: [] };
 
 	// Count Pals by rarity

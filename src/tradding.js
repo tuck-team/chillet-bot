@@ -36,7 +36,7 @@ function tradp({ args, replyFunc }, userData, messageAuthor, message) {
         userPals = userPalData.caughtPals.filter(p => p.name === palName);
     }
     if (userPals.length === 0) {
-        replyFunc('You don\'t have any ' + palName + ' Pals!');
+        replyFunc('You don\'t have any ' + palName + ' Pals!\n *Hint: Variants pals have to be spelled with an underscore, e.g. "Suzaku Aqua" is "Suzaku_Aqua"*');
         return;
     }
     userPalData.caughtPals.splice(userPalData.caughtPals.indexOf(userPals[0]), 1);

@@ -6,6 +6,7 @@ const { saveConfig, fs, CONFIG_FILE, getConfig } = require('./src/config');
 const { cooldowns, cooldown, setCooldown } = require('./src/cooldown');
 const { debug } = require('./src/debug');
 const { expedition } = require('./src/expedition');
+const { firepower } = require('./src/firepower');
 const { gold, paycheck } = require('./src/gold');
 const { help } = require('./src/help');
 const { incubateur, initializeFunctions } = require('./src/incubateur');
@@ -13,6 +14,7 @@ const { pal } = require('./src/pal');
 const { palbox } = require('./src/palbox');
 const { paldex, createProgressBar } = require('./src/paldex');
 const { prefix } = require('./src/prefix');
+const { profile } = require('./src/profile');
 const { tier, tupgrade } = require('./src/tier');
 const { topserv } = require('./src/topserv');
 const { tradp, tradg } = require('./src/tradding');
@@ -181,6 +183,9 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData, 
   else if (command === 'cooldown') {
     cooldown(messageAuthor, replyFunc);
   }
+  else if (command === 'firepower') {
+    firepower(messageAuthor, userData, args, replyFunc);
+  }
   else if (command === 'palbox') {
     palbox(messageAuthor, userData, replyFunc);
   }
@@ -189,6 +194,9 @@ const handleCommand = async (command, args, replyFunc, messageAuthor, userData, 
   }
   else if (command === 'paldex') {
     paldex(messageAuthor, userData, pals, replyFunc);
+  }
+  else if (command === 'profile') {
+    profile(messageAuthor, userData, pals, replyFunc);
   }
   else if (command === 'topserv') {
     topserv({ userData, pals, replyFunc });
@@ -260,7 +268,7 @@ client.on(Events.MessageCreate, async message => {
       incubator: []
     };
   }
-  if (now - lastTrigger >= cooldownTime) {
+  if (now - lastTrigger >= cooldownTime && Math.random() /* > 0.1 (random occurence)*/) {
     // Update cooldown
     cooldowns.set(message.author.id, now);
 

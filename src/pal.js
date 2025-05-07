@@ -31,7 +31,7 @@ function pal({ args, pals, replyFunc }, userData, messageAuthor) {
 		break;
 	}
 
-	console.log(userPalData.caughtPals.filter(p => p.name === pal.name && !p.isLucky).length, userPalData.caughtPals.filter(p => p.name === pal.name && p.isLucky).length);
+	console.log(userPalData.caughtPals.filter(p => p.id === pal.id && !p.isLucky).length, userPalData.caughtPals.filter(p => p.id === pal.id && p.isLucky).length);
 	const embed = new EmbedBuilder()
 	  .setColor(color)
 	  .setTitle(`${pal.name}`)
