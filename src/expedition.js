@@ -1,5 +1,6 @@
 const { EmbedBuilder } = require('discord.js');
 const { createProgressBar } = require('./paldex');
+const { firepower } = require('./firepower');
 
 function expedition(messageAuthor, userData, args, replyFunc) {
 	if (messageAuthor.bot) return; // Ignore bot messages
@@ -23,6 +24,7 @@ function expedition(messageAuthor, userData, args, replyFunc) {
 	else if (args[0] === "claim") {
 		const currentTime = new Date().getTime();
 		var goldEarned = 0;
+		var statues = 0;
 		let claimedExpeditions = 0;
 
 		user.expeditions = user.expeditions.filter(expedition => {
@@ -30,13 +32,16 @@ function expedition(messageAuthor, userData, args, replyFunc) {
 				claimedExpeditions++;
 				const reward = Math.floor(Math.random() * (700 - 400 + 1)) + 400; // Random reward between 400 and 700
 				user.gold += reward; // Add the reward to user's gold
+				statues = firepower / 10; // Calculate the number of statues based on firepower
 				return false; // Remove completed expedition
 			}
 			return true; // Keep ongoing expeditions
 		});
 
 		if (claimedExpeditions > 0) {
-			replyFunc(`You have successfully claimed rewards from ${claimedExpeditions} completed expedition(s), earned ${goldEarned}<:Money:1352019542565720168>.`);
+			replyFunc(`You have successfully claimed rewards from ${claimedExpeditions} completed expedition(s).`);
+			replyFunc(`Earned ${goldEarned}<:Money:1352019542565720168>`);
+			replyFunc(`Earned ${statues}<:lifmunk_effigy:1371757681995546746>`);
 		} else {
 			replyFunc("You have no completed expeditions to claim.");
 		}

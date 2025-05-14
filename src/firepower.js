@@ -10,6 +10,7 @@ function firepower(messageAuthor, userData, args, replyFunc) {
         firepower += (rarity ^ 2) * (pal.tier ^ 2);
     });
     replyFunc(`Your firepower is **${firepower}**!`);
+    return firepower;
 };
 
 function palFirepower(messageAuthor, userData, args, replyFunc) {
